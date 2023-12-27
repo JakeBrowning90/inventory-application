@@ -6,11 +6,11 @@ const PieceSchema = new Schema({
     title: { type: String, required: true, maxLength: 100 },
     medium: { type: String,  required: true, maxLength: 100 },
     artist: { type: Schema.Types.ObjectId, ref:"Artist", required: true },
-    year: { type: String, },
-    description: { type: String, },
-    height: { type: Number, },
-    width: { type: Number, },
-    length: { type: Number, },
+    year: { type: String, maxLength: 20 },
+    description: { type: String, maxLength: 500},
+    height: { type: Number, min: 0 },
+    width: { type: Number, min: 0 },
+    length: { type: Number, min: 0 },
 });
 
 PieceSchema.virtual("url").get(function () {

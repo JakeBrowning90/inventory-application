@@ -7,12 +7,12 @@ console.log(
   // Get arguments passed on command line
   const userArgs = process.argv.slice(2);
   
-  const Piece = require("./models/piece");
   const Artist = require("./models/artist");
-  
-  const pieces = [];
+  const Piece = require("./models/piece");
+
   const artists = [];
-  
+  const pieces = [];
+ 
   const mongoose = require("mongoose");
   mongoose.set("strictQuery", false);
   
@@ -24,13 +24,13 @@ console.log(
     console.log("Debug: About to connect");
     await mongoose.connect(mongoDB);
     console.log("Debug: Should be connected?");
-    await createPieces();
     await createArtists();
+    await createPieces();
     console.log("Debug: Closing mongoose");
     mongoose.connection.close();
   }
   
-  async function artistCreate(index, first_name, family_name, d_birth, d_death) {
+  async function artistCreate(index, first_name, family_name, d_birth, d_death, bio) {
     const artistdetail = { first_name: first_name, family_name: family_name };
     if (d_birth != false) artistdetail.date_of_birth = d_birth;
     if (d_death != false) artistdetail.date_of_death = d_death;
@@ -134,7 +134,7 @@ console.log(
         "oil on canvas",
         artists[0],
         "1889",
-        "Van Gogh painted several versions of A Wheatfield, with Cypresses during the summer of 1889, while he was a patient in the psychiatric hospital of Saint-Paul de Mausole, in the village of St-Rémy in the south of France. A first version, which he described as a study, was painted on site in late June 1889. The National Gallery's painting, which was completed in September while Van Gogh was confined to his hospital room, is the finished version. He also made a smaller copy of it for his mother and sister.",
+        "Van Gogh painted several versions of A Wheatfield, with Cypresses during the summer of 1889, while he was a patient in the psychiatric hospital of Saint-Paul de Mausole, in the village of St-Rémy in the south of France. A first version, which he described as a study, was painted on site in late June 1889.",
         72.1,
         90.9,
         false,
