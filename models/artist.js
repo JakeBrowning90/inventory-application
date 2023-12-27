@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 const ArtistSchema = new Schema({
     first_name: { type: String, maxLength: 30 },
     family_name: { type: String,  required: true,  maxLength: 30 },
-    year_of_birth: { type: Date, },
-    year_of_death: { type: Date, },
+    year_of_birth: { type: String, },
+    year_of_death: { type: String, },
     bio: { type: String, },
 });
 
