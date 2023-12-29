@@ -31,7 +31,6 @@ router.get();
 router.get();
 
 // PIECE ROUTES
-
 // GET catalog home page
 router.get("/", piece_controller.index);
 
