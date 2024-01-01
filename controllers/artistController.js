@@ -3,7 +3,14 @@ const asyncHandler = require("express-async-handler");
 
 // Display list of all Artists
 exports.artist_list = asyncHandler(async (req, res, next) => {
-    res.send("Not implemented: Artist list")
+    const allArtists = await Artist.find()
+        .sort({ name : 1 })
+        .exec();
+
+    res.render("artist_list", {
+        title: "All Artists",
+        artist_list: allArtists
+    });
 });
 
 // Display details of specific Artist
