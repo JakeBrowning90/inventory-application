@@ -1,0 +1,13 @@
+extends layout 
+
+block content 
+    h1= title 
+    if piece_list.length 
+        ul 
+            each piece in piece_list 
+                li 
+                    a(href=piece.url) #{piece.title} 
+                    | (#{piece.artist.name}) 
+
+    else 
+        p There are no pieces in the database.

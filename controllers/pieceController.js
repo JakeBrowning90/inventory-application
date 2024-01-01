@@ -20,7 +20,12 @@ exports.index = asyncHandler(async (req, res, next) => {
 
 // Display list of all Pieces
 exports.piece_list = asyncHandler(async (req, res, next) => {
-    res.send("Not implemented: Piece list")
+    const allPieces = await Piece.find({}, "title artist")
+        .sort({ title: 1 })
+        .populate("artist")
+        .exec();
+
+    res.render("piece_list", { title: "All Pieces", piece_list: allPieces });
 });
 
 // Display details of specific Piece
