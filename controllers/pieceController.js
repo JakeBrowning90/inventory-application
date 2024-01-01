@@ -1,8 +1,21 @@
 const Piece = require("../models/piece");
+const Artist = require("../models/artist");
 const asyncHandler = require("express-async-handler");
 
 exports.index = asyncHandler(async (req, res, next) => {
-    res.send("Not implemented: Site home page")
+    const [
+        numArtists,
+        numPieces
+    ] = await Promise.all([
+        Artist.countDocuments({}).exec(),
+        Piece.countDocuments({}).exec(),
+    ]);
+
+    res.render("index", {
+        title: "Art Gallery",
+        artist_count: numArtists,
+        piece_count: numPieces,
+    });
 });
 
 // Display list of all Pieces

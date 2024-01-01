@@ -2,4 +2,10 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Browse famous works of art and learn about the creative minds behind them!
+
+  h2 Current entries: 
+
+  ul
+    li #[strong Artists:] !{artist_count} 
+    li #[strong Pieces:] !{piece_count}
