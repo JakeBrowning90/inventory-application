@@ -30,10 +30,14 @@ console.log(
     mongoose.connection.close();
   }
   
-  async function artistCreate(index, first_name, family_name, d_birth, d_death, bio) {
-    const artistdetail = { first_name: first_name, family_name: family_name };
-    if (d_birth != false) artistdetail.date_of_birth = d_birth;
-    if (d_death != false) artistdetail.date_of_death = d_death;
+  async function artistCreate(index, first_name, family_name, year_of_birth, year_of_death, bio) {
+    const artistdetail = { 
+      first_name: first_name, 
+      family_name: family_name,
+      year_of_birth: year_of_birth, 
+      year_of_death: year_of_death,
+      bio: bio,
+    };
   
     const artist = new Artist(artistdetail);
   

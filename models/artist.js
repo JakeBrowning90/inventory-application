@@ -24,7 +24,7 @@ ArtistSchema.virtual("name").get(function () {
     } else if (this.family_name === "false") {
         fullname = `${this.first_name}`;
     } else {
-        fullname = `${this.first_name} ${this.family_name}`;
+        fullname = `${this.family_name}, ${this.first_name}`;
     } 
     return fullname;
 });
