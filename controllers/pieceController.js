@@ -25,12 +25,25 @@ exports.piece_list = asyncHandler(async (req, res, next) => {
         .populate("artist")
         .exec();
 
-    res.render("piece_list", { title: "All Pieces", piece_list: allPieces });
+    res.render("piece_list", { 
+        title: "All Pieces", 
+        piece_list: allPieces });
 });
 
 // Display details of specific Piece
 exports.piece_detail = asyncHandler(async (req, res, next) => {
-    res.send(`Not implemented: Piece detail: ${req.params.id}`)
+    const piece = await Piece.findById(req.params.id).populate("artist").exec();
+
+    if (piece === null) {
+        const err = new Error("Piece not found");
+        err.status = 404;
+        return next(err);
+    }
+
+    res.render("piece_detail", {
+        title: piece.title,
+        piece: piece
+    });
 });
 
 // Display Piece create form on GET

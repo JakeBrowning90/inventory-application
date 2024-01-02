@@ -1,0 +1,12 @@
+extends layout 
+
+block content 
+    h1 Title: #{title} 
+
+    p #[strong Artist: ]
+        a(href=piece.artist.url) #{piece.artist.name}
+    p #[strong Year: ] #{piece.year} 
+    p #[strong Medium: ] #{piece.medium}
+    // To do: make dimensions conditional
+    p #[strong Dimensions: ] #{piece.height} x #{piece.width} x #{piece.length}
+    p #[strong Description: ] #{piece.description}
