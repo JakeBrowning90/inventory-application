@@ -6,7 +6,7 @@ block content
         ul 
             each artist in artist_list 
                 li 
-                    a(href=artist.url) #{artist.name} 
+                    a(href=artist.url) #{artist.sorted_name} 
 
     else 
         p There are no artists in the database.

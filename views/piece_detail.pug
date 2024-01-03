@@ -4,7 +4,7 @@ block content
     h1 Title: #{title} 
 
     p #[strong Artist: ]
-        a(href=piece.artist.url) #{piece.artist.name}
+        a(href=piece.artist.url) #{piece.artist.display_name}
     p #[strong Year: ] #{piece.year} 
     p #[strong Medium: ] #{piece.medium}
     // To do: make dimensions conditional

@@ -10,15 +10,22 @@ const ArtistSchema = new Schema({
     bio: { type: String, maxLength: 500},
 });
 
-ArtistSchema.virtual("name").get(function () {
+ArtistSchema.virtual("display_name").get(function () {
     let fullname = "";
-    // if (this.first_name && this.family_name) {
-    //     fullname = `${this.family_name}, ${this.first_name}`;
-    // } else if (this.first_name === "false" ) {
-    //     fullname = `${this.family_name}`;
-    // } else if (this.family_name === "false") {
-    //     fullname = `${this.first_name}`;
-    // }
+
+    if (this.first_name === "false" ) {
+        fullname = `${this.family_name}`;
+    } else if (this.family_name === "false") {
+        fullname = `${this.first_name}`;
+    } else {
+        fullname = `${this.first_name} ${this.family_name}`;
+    } 
+    return fullname;
+});
+
+ArtistSchema.virtual("sorted_name").get(function () {
+    let fullname = "";
+
     if (this.first_name === "false" ) {
         fullname = `${this.family_name}`;
     } else if (this.family_name === "false") {

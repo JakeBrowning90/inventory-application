@@ -7,7 +7,7 @@ block content
             each piece in piece_list 
                 li 
                     a(href=piece.url) #{piece.title} 
-                    | (#{piece.artist.name}) 
+                    | (#{piece.artist.display_name}) 
 
     else 
         p There are no pieces in the database.
