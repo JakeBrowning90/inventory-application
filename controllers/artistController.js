@@ -41,15 +41,51 @@ exports.artist_create_get = asyncHandler(async (req, res, next) => {
 });
 
 // Handle Artist create on POST
-exports.artist_create_post = asyncHandler(async (req, res, next) => {
-    body("first_name")
+exports.artist_create_post = [
+    body("first_name", "Specify at least 1 name")
+        .trim()
+        .isLength({ min: 1 })
+        .escape(),
     body("family_name")
+        .optional({ values: "falsy" })
+        .trim()
+        .escape(),
     body("year_of_birth")
+        .optional({ values: "falsy" })
+        .trim()
+        .escape(),
     body("year_of_death")
+        .optional({ values: "falsy" })
+        .trim()
+        .escape(),
     body("bio")
+        .optional({ values: "falsy" })
+        .trim()
+        .escape(),
 
-    res.send("Not implemented: Artist create POST")
-});
+    asyncHandler(async (req, res, next) => {
+        const errors = validationResult(req);
+        const artist = new Artist({
+            first_name: req.body.first_name,
+            family_name: req.body.family_name,
+            year_of_birth: req.body.year_of_birth,
+            year_of_death: req.body.year_of_death,
+            bio: req.body.bio,
+        });
+
+        if (!errors.isEmpty()) {
+            res.render("artist_form", {
+                title: "Create Artist",
+                artist: artist,
+                errors: errors.array(),
+            });
+            return;
+        } else {
+            await artist.save();
+            res.redirect(artist.url);
+        }
+    })
+];
 
 // Display Artist delete form on GET
 exports.artist_delete_get = asyncHandler(async (req, res, next) => {

@@ -1,0 +1,25 @@
+extends layout 
+
+block content 
+    h1= title 
+
+    form(method='POST') 
+        div.form-group 
+            label(for='first_name') First Name / Mononym:
+            input#first_name.form-control(type='text', placeholder='First name / Mononym')
+            
+            label(for='family_name') Family Name:
+            input#family_name.form-control(type='text', placeholder='Family name')
+        div.form-group 
+            label(for='year_of_birth') Year of Birth:
+            input 
+            label(for='year_of_death') Year of Death:
+            input 
+        div.form-group 
+            label(for='bio') Biography:
+            input 
+
+    if errors 
+        ul 
+            for error in errors 
+                li!= error.msg
