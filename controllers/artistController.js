@@ -1,6 +1,7 @@
 const Artist = require("../models/artist");
 const Piece = require("../models/piece");
 const asyncHandler = require("express-async-handler");
+const { body, validationResult } = require("express-validator");
 
 // Display list of all Artists
 exports.artist_list = asyncHandler(async (req, res, next) => {
@@ -36,11 +37,17 @@ exports.artist_detail = asyncHandler(async (req, res, next) => {
 
 // Display Artist create form on GET
 exports.artist_create_get = asyncHandler(async (req, res, next) => {
-    res.send("Not implemented: Artist create GET")
+    res.render("artist_form", { title: "Create Artist" });
 });
 
 // Handle Artist create on POST
 exports.artist_create_post = asyncHandler(async (req, res, next) => {
+    body("first_name")
+    body("family_name")
+    body("year_of_birth")
+    body("year_of_death")
+    body("bio")
+
     res.send("Not implemented: Artist create POST")
 });
 

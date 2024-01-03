@@ -1,6 +1,7 @@
 const Piece = require("../models/piece");
 const Artist = require("../models/artist");
 const asyncHandler = require("express-async-handler");
+const { body, validationResult } = require("express-validator");
 
 exports.index = asyncHandler(async (req, res, next) => {
     const [
