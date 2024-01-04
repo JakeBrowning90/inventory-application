@@ -49,7 +49,12 @@ exports.piece_detail = asyncHandler(async (req, res, next) => {
 
 // Display Piece create form on GET
 exports.piece_create_get = asyncHandler(async (req, res, next) => {
-    res.send("Not implemented: Piece create GET")
+    const allArtists = Artist.find().sort({ sorted_name: 1 }).exec;
+
+    res.render("piece_form", {
+        title: "Create Piece",
+        artists: allArtists
+    });
 });
 
 // Handle Piece create on POST
