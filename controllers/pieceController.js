@@ -58,9 +58,58 @@ exports.piece_create_get = asyncHandler(async (req, res, next) => {
 });
 
 // Handle Piece create on POST
-exports.piece_create_post = asyncHandler(async (req, res, next) => {
-    res.send("Not implemented: Piece create POST")
-});
+exports.piece_create_post = [
+    body("title")
+        .trim()
+        .escape(),
+    body("medium")
+        .trim()
+        .escape(),
+    body("artist")
+        .trim()
+        .escape(),
+    body("year")
+        .trim()
+        .escape(),
+    body("description")
+        .trim()
+        .escape(),
+    body("height")
+        .trim()
+        .escape(),
+    body("width")
+        .trim()
+        .escape(),
+    body("length")
+        .trim()
+        .escape(),
+
+    asyncHandler(async (req, res, next) => {
+        const errors = validationResult(req);
+        const piece = new Piece({
+            title: req.body.title,
+            medium: req.body.medium,
+            artist: req.body.artist,
+            year: req.body.year,
+            description: req.body.description,
+            height: req.body.height,
+            width: req.body.width,
+            length: req.body.length,
+        });
+
+        if (!errors.isEmpty()) {
+            res.render("piece_form", {
+                title: "Create Piece",
+                piece: piece,
+                errors: errors.array(),
+            });
+            return;
+        } else {
+            await piece.save();
+            res.redirect(piece.url);
+        }
+    })
+]
 
 // Display Piece delete form on GET
 exports.piece_delete_get = asyncHandler(async (req, res, next) => {

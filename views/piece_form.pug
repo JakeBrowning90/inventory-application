@@ -5,11 +5,13 @@ block content
 
     form(method='POST') 
         div.form-group 
-            //- label(for='first_name') First Name / Mononym:
-            //- input.form-control(type='text' placeholder='First name / Mononym' name='first_name' required value=(undefined==artist ? '' : artist.first_name))            
+            label(for='title') Title:
+            input.form-control(type='text' placeholder='Title' name='title' required value=(undefined==piece ? '' : piece.title))            
+            label(for='medium') Medium:
+            input.form-control(type='text', placeholder='Medium' name='medium' required value=(undefined==piece ? '' : piece.medium))
             //- label(for='family_name') Family Name:
             //- input#family_name.form-control(type='text', placeholder='Family name' name='family_name' value=(undefined==artist ? '' : artist.family_name))
-
+        
         div.form-group 
             //- label(for='year_of_birth') Year of Birth:
             //- input#year_of_birth.form-control(type='text', placeholder="1880, c. 950, etc." name='year_of_birth' value=(undefined==artist ? '' : artist.year_of_birth))
@@ -19,7 +21,10 @@ block content
         div.form-group 
             //- label(for='bio') Biography:
             //- input#bio.form-control(type='textarea', placeholder="Details about life" name='bio' value=(undefined==artist ? '' : artist.bio)) 
-
+            //- label(for='bio') Biography:
+            //- input#bio.form-control(type='textarea', placeholder="Details about life" name='bio' value=(undefined==artist ? '' : artist.bio)) 
+            //- label(for='bio') Biography:
+            //- input#bio.form-control(type='textarea', placeholder="Details about life" name='bio' value=(undefined==artist ? '' : artist.bio)) 
         button.btn.btn-primary(type='submit') Submit
 
     if errors 
