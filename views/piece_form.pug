@@ -9,9 +9,18 @@ block content
             input.form-control(type='text' placeholder='Title' name='title' required value=(undefined==piece ? '' : piece.title))            
             label(for='medium') Medium:
             input.form-control(type='text', placeholder='Medium' name='medium' required value=(undefined==piece ? '' : piece.medium))
-            //- label(for='family_name') Family Name:
-            //- input#family_name.form-control(type='text', placeholder='Family name' name='family_name' value=(undefined==artist ? '' : artist.family_name))
-        
+            label(for='artist') Artist:
+            select#artist.form-control(name="artist" required)
+                option(value='') --Select an Artist--
+                //- for artist in artists 
+                //-     if piece 
+                //-         if artist._id.toString()===piece.artist._id.toString() 
+                //-             option(value=artist._id selected) #{artist.sorted_name} 
+                //-         else 
+                //-             option(value=artist._id) #{artist.sorted_name} 
+                //-     else 
+                //-         option(value=artist._id) #{artist.sorted_name} 
+
         div.form-group 
             //- label(for='year_of_birth') Year of Birth:
             //- input#year_of_birth.form-control(type='text', placeholder="1880, c. 950, etc." name='year_of_birth' value=(undefined==artist ? '' : artist.year_of_birth))
