@@ -16,4 +16,9 @@ block content
             a(href=piece.url) #{piece.title}
 
         else
-            p This author has no pieces in the collection.
+            p This artist has no pieces in the collection.
+
+    hr
+
+    p
+        a(href=artist.url+'/delete') Delete artist

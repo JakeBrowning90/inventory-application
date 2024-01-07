@@ -89,12 +89,40 @@ exports.artist_create_post = [
 
 // Display Artist delete form on GET
 exports.artist_delete_get = asyncHandler(async (req, res, next) => {
-    // const [artist, allPiecesByArtist] = 
+    const [artist, allPiecesByArtist] = await Promise.all([
+        Artist.findById(req.params.id).exec(),
+        Piece.find({ artist: req.params.id }, "title").exec(),
+    ]);
+
+    if (artist === null) {
+        res.redirect("/catalog/artists");
+    }
+
+    res.render("artist_delete", {
+        title: "Delete Artist",
+        artist: artist,
+        artist_pieces: allPiecesByArtist,
+    });
 });
 
 // Handle Artist delete on POST
 exports.artist_delete_post = asyncHandler(async (req, res, next) => {
-    res.send("Not implemented: Artist delete POST")
+    const [artist, allPiecesByArtist] = await Promise.all([
+        Artist.findById(req.params.id).exec(),
+        Piece.find({ artist: req.params.id }, "title").exec(),
+    ]);
+
+    if (allPiecesByArtist.length > 0) {
+        res.render("artist_delete", {
+            title: "Delete Artist",
+            artist: artist,
+            artist_pieces: allPiecesByArtist,
+        });
+        return;
+    } else {
+        await Artist.findByIdAndDelete(req.body.artistid);
+        res.redirect("/catalog/artists")
+    }
 });
 
 // Display Artist update form on GET

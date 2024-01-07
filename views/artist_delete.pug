@@ -1,0 +1,13 @@
+extends layout 
+
+block content 
+
+    h1 #{title}: #{artist.display_name}
+
+    if artist_pieces.length 
+
+        p #[strong Delete the following pieces before attemping to delete this artist:]
+
+        div(style='margin-left:20px;margin-top:20px') 
+            dl 
+                each piece in artist_pieces
