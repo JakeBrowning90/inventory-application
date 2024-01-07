@@ -89,7 +89,7 @@ exports.artist_create_post = [
 
 // Display Artist delete form on GET
 exports.artist_delete_get = asyncHandler(async (req, res, next) => {
-    res.send("Not implemented: Artist delete GET")
+    // const [artist, allPiecesByArtist] = 
 });
 
 // Handle Artist delete on POST
