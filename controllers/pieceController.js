@@ -202,7 +202,7 @@ exports.piece_update_post = [
 
         if (!errors.isEmpty()) {
             res.render("piece_form", {
-                title: "Create Piece",
+                title: "Update Piece",
                 piece: piece,
                 errors: errors.array(),
             });

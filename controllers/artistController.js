@@ -127,10 +127,66 @@ exports.artist_delete_post = asyncHandler(async (req, res, next) => {
 
 // Display Artist update form on GET
 exports.artist_update_get = asyncHandler(async (req, res, next) => {
-    res.send("Not implemented: Artist update GET")
+    const [artist] = await Promise.all([
+        Artist.findById(req.params.id).exec(),
+    ]);
+
+    if (artist === null) {
+        const err = new Error("Artist not found");
+        err.status = 404;
+        return next(err);
+    }
+
+    res.render("artist_form", {
+        title: "Update Artist",
+        artist: artist,
+    });
 });
 
 // Handle Artist update on POST
-exports.artist_update_post = asyncHandler(async (req, res, next) => {
-    res.send("Not implemented: Artist update POST")
-});
+exports.artist_update_post = [
+    body("first_name", "Specify at least 1 name")
+    .trim()
+    .isLength({ min: 1 })
+    .escape(),
+    body("family_name")
+    .optional({ values: "falsy" })
+    .trim()
+    .escape(),
+    body("year_of_birth")
+    .optional({ values: "falsy" })
+    .trim()
+    .escape(),
+    body("year_of_death")
+    .optional({ values: "falsy" })
+    .trim()
+    .escape(),
+    body("bio")
+    .optional({ values: "falsy" })
+    .trim()
+    .escape(),
+
+    asyncHandler(async (req, res, next) => {
+        const errors = validationResult(req);
+        const artist = new Artist({
+            first_name: req.body.first_name,
+            family_name: req.body.family_name,
+            year_of_birth: req.body.year_of_birth,
+            year_of_death: req.body.year_of_death,
+            bio: req.body.bio,
+            _id: req.params.id,
+        });
+
+        if (!errors.isEmpty()) {
+            res.render("artist_form", {
+                title: "Update Artist",
+                artist: artist,
+                errors: errors.array(),
+            });
+            return;
+        } else {
+            const updatedArtist = await Artist.findByIdAndUpdate(req.params.id, artist, {});
+            res.redirect(updatedArtist.url);
+        }
+    })
+]
