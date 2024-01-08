@@ -9,4 +9,9 @@ block content
     p #[strong Medium: ] #{piece.medium}
     // To do: make dimensions conditional
     p #[strong Dimensions: ] #{piece.height} x #{piece.width} x #{piece.length}
-    p #[strong Description: ] #{piece.description}
+    p #[strong Description: ] #{piece.description} 
+
+    hr
+
+    p
+        a(href=piece.url+'/delete') Delete piece

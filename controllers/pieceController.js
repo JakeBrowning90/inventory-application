@@ -117,12 +117,22 @@ exports.piece_create_post = [
 
 // Display Piece delete form on GET
 exports.piece_delete_get = asyncHandler(async (req, res, next) => {
-    res.send("Not implemented: Piece delete GET")
+    const piece =await Piece.findById(req.params.id).exec();
+
+    if (piece === null) {
+        res.redirect("/catalog/pieces");
+    }
+
+    res.render("piece_delete", {
+        title: "Delete Piece",
+        piece: piece,
+    });
 });
 
 // Handle Piece delete on POST
 exports.piece_delete_post = asyncHandler(async (req, res, next) => {
-    res.send("Not implemented: Piece delete POST")
+    await Piece.findByIdAndDelete(req.body.pieceid);
+        res.redirect("/catalog/pieces")
 });
 
 // Display Piece update form on GET
