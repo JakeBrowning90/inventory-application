@@ -8,6 +8,9 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const catalogRouter = require('./routes/catalog');
 
+const multer = require('multer');
+// const upload = multer({});
+
 const app = express();
 
 // Set up mongoose connection
