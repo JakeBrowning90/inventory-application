@@ -42,12 +42,11 @@ exports.artist_create_get = asyncHandler(async (req, res, next) => {
 
 // Handle Artist create on POST
 exports.artist_create_post = [
-    body("first_name", "Specify at least 1 name")
+    body("first_name")
         .trim()
         .isLength({ min: 1 })
         .escape(),
     body("family_name")
-        .optional({ values: "falsy" })
         .trim()
         .escape(),
     body("year_of_birth")
@@ -145,12 +144,13 @@ exports.artist_update_get = asyncHandler(async (req, res, next) => {
 
 // Handle Artist update on POST
 exports.artist_update_post = [
-    body("first_name", "Specify at least 1 name")
+    body("first_name")
+    .optional({ values: "falsy" })
     .trim()
     .isLength({ min: 1 })
     .escape(),
     body("family_name")
-    .optional({ values: "falsy" })
+    
     .trim()
     .escape(),
     body("year_of_birth")

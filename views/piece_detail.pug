@@ -1,14 +1,23 @@
 extends layout 
 
 block content 
-    h1 Title: #{title} 
+    h1 #{title} 
 
     p #[strong Artist: ]
         a(href=piece.artist.url) #{piece.artist.display_name}
-    p #[strong Year: ] #{piece.year} 
+    p #[strong Year made: ] #{piece.year} 
     p #[strong Medium: ] #{piece.medium}
     // To do: make dimensions conditional
-    p #[strong Dimensions: ] #{piece.height} x #{piece.width} x #{piece.length}
+    if piece.length 
+        // display 3 dimensions if item has length
+        p #[strong Dimensions: ] #{piece.height} x #{piece.width} x #{piece.length} cm 
+    else if !piece.width && !piece.length 
+        // display height only if no width or length given
+        p #[strong Dimensions: ] #{piece.height} cm (height)
+    else 
+        // display height and width as default (ie most paintings)
+        p #[strong Dimensions: ] #{piece.height} x #{piece.width} cm 
+
     p #[strong Description: ] #{piece.description} 
 
     hr

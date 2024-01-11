@@ -5,10 +5,10 @@ block content
 
     form(method='POST') 
         div.form-group 
-            label(for='first_name') First Name / Mononym:
-            input.form-control(type='text' placeholder='First name / Mononym' name='first_name' required value=(undefined==artist ? '' : artist.first_name))            
-            label(for='family_name') Family Name:
-            input#family_name.form-control(type='text', placeholder='Family name' name='family_name' value=(undefined==artist ? '' : artist.family_name))
+            label(for='first_name') First Name:
+            input.form-control(type='text' placeholder='First name' name='first_name' value=(undefined==artist ? '' : artist.first_name))            
+            label(for='family_name') Family Name / Mononym:
+            input#family_name.form-control(type='text', placeholder='Family name' name='family_name' required value=(undefined==artist ? '' : artist.family_name))
 
         div.form-group 
             label(for='year_of_birth') Year of Birth:

@@ -13,9 +13,9 @@ const ArtistSchema = new Schema({
 ArtistSchema.virtual("display_name").get(function () {
     let fullname = "";
 
-    if (this.first_name === "false" ) {
+    if (this.first_name === "") {
         fullname = `${this.family_name}`;
-    } else if (this.family_name === "false") {
+    } else if (this.family_name === "") {
         fullname = `${this.first_name}`;
     } else {
         fullname = `${this.first_name} ${this.family_name}`;
@@ -26,9 +26,9 @@ ArtistSchema.virtual("display_name").get(function () {
 ArtistSchema.virtual("sorted_name").get(function () {
     let fullname = "";
 
-    if (this.first_name === "false" ) {
+    if (this.first_name === "") {
         fullname = `${this.family_name}`;
-    } else if (this.family_name === "false") {
+    } else if (this.family_name === "") {
         fullname = `${this.first_name}`;
     } else {
         fullname = `${this.family_name}, ${this.first_name}`;

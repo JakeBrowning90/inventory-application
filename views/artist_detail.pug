@@ -3,7 +3,11 @@ extends layout
 block content 
     h1 Artist Profile: #{title}
 
-    p #{artist.year_of_birth} - #{artist.year_of_death} 
+    if !artist.year_of_birth && !artist.year_of_birth
+
+    else 
+        p #{artist.year_of_birth} - #{artist.year_of_death} 
+
     p #[strong Biography: ] #{artist.bio}
 
     div(style='margin-left:20px;margin-top:20px')

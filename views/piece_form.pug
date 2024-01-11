@@ -21,16 +21,16 @@ block content
                     else 
                         option(value=artist._id) #{artist.sorted_name} 
             
-            label(for='year') Year:
+            label(for='year') Year made:
             input.form-control(type='text', placeholder='Year' name='year' required value=(undefined==piece ? '' : piece.year))
             
 
         div.form-group 
-            label(for='height') Height:
+            label(for='height') Height (cm):
             input.form-control(type='number' step="0.01" placeholder='Height' name='height' value=(undefined==piece ? '' : piece.height)) 
-            label(for='width') Width:
+            label(for='width') Width (cm):
             input.form-control(type='number' step="0.01" placeholder='Width' name='width' value=(undefined==piece ? '' : piece.width)) 
-            label(for='length') Length:
+            label(for='length') Length (cm):
             input.form-control(type='number' step="0.01" placeholder='Length' name='length' value=(undefined==piece ? '' : piece.length))
 
         div.form-group 
