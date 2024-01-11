@@ -150,7 +150,6 @@ exports.artist_update_post = [
     .isLength({ min: 1 })
     .escape(),
     body("family_name")
-    
     .trim()
     .escape(),
     body("year_of_birth")

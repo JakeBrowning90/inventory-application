@@ -5,11 +5,11 @@ block content
 
     form(method='POST'  ) 
         div.form-group 
-            label(for='title') Title:
-            input.form-control(type='text' placeholder='Title' name='title' required value=(undefined==piece ? '' : piece.title))            
-            label(for='medium') Medium:
-            input.form-control(type='text', placeholder='Medium' name='medium' required value=(undefined==piece ? '' : piece.medium))
-            label(for='artist') Artist:
+            label(for='title') *Title:
+            input.form-control(type='text' placeholder='Title of work' name='title' required value=(undefined==piece ? '' : piece.title))            
+            label(for='medium') *Medium:
+            input.form-control(type='text', placeholder='Oil on canvas / watercolour / marble / etc.' name='medium' required value=(undefined==piece ? '' : piece.medium))
+            label(for='artist') *Artist:
             select#artist.form-control(name="artist" required)
                 option(value='') --Select an Artist--
                 for artist in artists 
@@ -22,7 +22,7 @@ block content
                         option(value=artist._id) #{artist.sorted_name} 
             
             label(for='year') Year made:
-            input.form-control(type='text', placeholder='Year' name='year' required value=(undefined==piece ? '' : piece.year))
+            input.form-control(type='text', placeholder='1565 / c. 1700 / 1850-1852 / etc.' name='year' required value=(undefined==piece ? '' : piece.year))
             
 
         div.form-group 
@@ -37,9 +37,9 @@ block content
             label(for='description') Description:
             input#description.form-control(type='textarea', placeholder="Description" name='description' value=(undefined==piece ? '' : piece.description)) 
 
-        //- div.form-group 
-        //-     label(for='image') Upload image: 
-        //-     input#image.form-control(type='file', name='image')
+        div.form-group 
+            label(for='image') Upload image: 
+            input#image.form-control(type='file', name='image')
 
         button.btn.btn-primary(type='submit') Submit
 

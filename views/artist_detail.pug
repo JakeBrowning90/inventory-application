@@ -3,9 +3,15 @@ extends layout
 block content 
     h1 Artist Profile: #{title}
 
-    if !artist.year_of_birth && !artist.year_of_birth
+    // Unknown artist years, display nothing
+    if !artist.year_of_birth && !artist.year_of_death
+
+    else if artist.year_of_birth && !artist.year_of_death
+        // Living artist
+        p Born #{artist.year_of_birth}
 
     else 
+        // Known artist birth and death
         p #{artist.year_of_birth} - #{artist.year_of_death} 
 
     p #[strong Biography: ] #{artist.bio}
