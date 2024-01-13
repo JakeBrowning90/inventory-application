@@ -49,8 +49,6 @@ exports.piece_detail = asyncHandler(async (req, res, next) => {
 
 // Display Piece create form on GET
 exports.piece_create_get = asyncHandler(async (req, res, next) => {
-    // const allArtists = Artist.find().sort({ sorted_name: 1 }).exec;
-
     const allArtists = await Artist.find({}, "first_name family_name")
         .sort({ family_name: 1 })
         .exec();
@@ -87,9 +85,9 @@ exports.piece_create_post = [
     body("length")
         .trim()
         .escape(),
-    // body("image")
-    //     .trim()
-    //     .escape(),
+    body("image")
+        .trim()
+        .escape(),
 
     asyncHandler(async (req, res, next) => {
         const errors = validationResult(req);
