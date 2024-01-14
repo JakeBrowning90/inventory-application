@@ -3,12 +3,15 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const multer = require('multer');
+const upload = multer({dest: 'uploads/'})
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const catalogRouter = require('./routes/catalog');
 
 const app = express();
+
 
 // Set up mongoose connection
 const mongoose = require("mongoose");
@@ -19,6 +22,12 @@ main().catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB);
 }
+
+app.post('/piece_form', upload.single('image'), function (req, res, next) {
+  // req.file is the `image` file
+  // req.body will hold the text fields, if there were any
+  console.log(req.file, req.body)
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

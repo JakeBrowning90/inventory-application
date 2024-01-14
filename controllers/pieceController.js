@@ -187,6 +187,9 @@ exports.piece_update_post = [
     body("length")
         .trim()
         .escape(),
+    body("image")
+        .trim()
+        .escape(),
 
     asyncHandler(async (req, res, next) => {
         const errors = validationResult(req);
@@ -199,6 +202,7 @@ exports.piece_update_post = [
             height: req.body.height,
             width: req.body.width,
             length: req.body.length,
+            image: req.body.image,
             _id: req.params.id,
         });
 
