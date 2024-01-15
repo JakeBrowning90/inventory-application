@@ -100,7 +100,7 @@ exports.piece_create_post = [
             height: req.body.height,
             width: req.body.width,
             length: req.body.length,
-            // image: req.body.image
+            image: req.body.image
         });
 
         if (!errors.isEmpty()) {
