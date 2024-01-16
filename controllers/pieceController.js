@@ -2,9 +2,6 @@ const Piece = require("../models/piece");
 const Artist = require("../models/artist");
 const asyncHandler = require("express-async-handler");
 const { body, validationResult } = require("express-validator");
-const multer = require('multer');
-
-const upload = multer( {dest: 'uploads/'} );
 
 exports.index = asyncHandler(async (req, res, next) => {
     const [
