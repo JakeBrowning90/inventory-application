@@ -114,12 +114,6 @@ exports.piece_create_post = [
             });
             return;
         } else {
-            upload.single('image'), function (req, res, next) {
-                // req.file is the `image` file
-                // req.body will hold the text fields, if there were any
-                console.log("App.post running...")
-                console.log(req.file, req.body)
-                },
             await piece.save();
             res.redirect(piece.url);
         }
