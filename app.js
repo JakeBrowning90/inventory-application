@@ -24,9 +24,10 @@ async function main() {
   await mongoose.connect(mongoDB);
 }
 
-app.post('/piece_form', upload.single('uploads/'), function (req, res, next) {
+app.post('/piece_form', upload.single('image'), function (req, res, next) {
   // req.file is the `image` file
   // req.body will hold the text fields, if there were any
+  console.log("App.post running...")
   console.log(req.file, req.body)
 })
 

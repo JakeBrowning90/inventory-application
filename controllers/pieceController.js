@@ -100,7 +100,7 @@ exports.piece_create_post = [
             height: req.body.height,
             width: req.body.width,
             length: req.body.length,
-            image: req.body.image
+            image: req.file.filename,
         });
 
         if (!errors.isEmpty()) {
@@ -202,7 +202,8 @@ exports.piece_update_post = [
             height: req.body.height,
             width: req.body.width,
             length: req.body.length,
-            image: req.body.image,
+         
+            image: req.file.filename,
             _id: req.params.id,
         });
 
