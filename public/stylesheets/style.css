@@ -16,4 +16,5 @@ a {
 img {
   padding: 20px;
   border: solid 1px black;
+  height: 200px;
 }
