@@ -5,14 +5,23 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const multer = require('multer');
 
-const upload = multer({ dest: path.join(__dirname, 'uploads/') });
-
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const catalogRouter = require('./routes/catalog');
 
 const app = express();
 
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, path.join(__dirname, 'public/images/')
+)},
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+
+// const upload = multer({ dest: path.join(__dirname, 'uploads/') });
+const upload = multer({ storage: storage });
 
 // Set up mongoose connection
 const mongoose = require("mongoose");
@@ -24,11 +33,12 @@ async function main() {
   await mongoose.connect(mongoDB);
 }
 
-app.post('/piece_form', upload.single('image'), function (req, res, next) {
+app.post(['/catalog/piece/create', '/catalog/piece/:id/update'], upload.single('image'), function (req, res, next) {
   // req.file is the `image` file
   // req.body will hold the text fields, if there were any
-  console.log("App.post running...")
-  console.log(req.file, req.body)
+  console.log("App.post running...");
+  console.log(req.file, req.body);
+  next();
 })
 
 // view engine setup

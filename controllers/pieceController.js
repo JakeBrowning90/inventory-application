@@ -103,6 +103,8 @@ exports.piece_create_post = [
             image: req.file.filename,
         });
 
+        console.log(piece)
+ 
         if (!errors.isEmpty()) {
             res.render("piece_form", {
                 title: "Create Piece",
@@ -202,10 +204,11 @@ exports.piece_update_post = [
             height: req.body.height,
             width: req.body.width,
             length: req.body.length,
-         
             image: req.file.filename,
             _id: req.params.id,
         });
+
+        console.log(piece)
 
         if (!errors.isEmpty()) {
             res.render("piece_form", {
