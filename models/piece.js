@@ -11,7 +11,7 @@ const PieceSchema = new Schema({
     height: { type: Number, min: 0 },
     width: { type: Number, min: 0 },
     length: { type: Number, min: 0 },
-    image: { type: String  }
+    image: { type: String, }
 });
 
 PieceSchema.virtual("url").get(function () {

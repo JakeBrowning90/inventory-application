@@ -38,8 +38,8 @@ block content
             input#description.form-control(type='textarea', placeholder="Description" name='description' value=(undefined==piece ? '' : piece.description)) 
 
         div.form-group 
-            label(for='image') Upload image: 
-            input#image.form-control(type='file', name='image')
+            label(for='image') *Upload image: 
+            input#image.form-control(type='file', name='image' required  value=(undefined==piece ? '' : piece.image))
 
         button.btn.btn-primary(type='submit') Submit
 
