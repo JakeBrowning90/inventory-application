@@ -6,19 +6,19 @@ block content
     form(method='POST') 
         div.form-group 
             label(for='first_name') First Name:
-            input.form-control(type='text' placeholder='First name' name='first_name' value=(undefined==artist ? '' : artist.first_name))            
+            input.form-control(type='text' placeholder='First name' name='first_name' maxlength="30" value=(undefined==artist ? '' : artist.first_name))            
             label(for='family_name') Family Name / Mononym:
-            input#family_name.form-control(type='text', placeholder='Family name' name='family_name' required value=(undefined==artist ? '' : artist.family_name))
+            input#family_name.form-control(type='text', placeholder='Family name' name='family_name' maxlength="30" required value=(undefined==artist ? '' : artist.family_name))
 
         div.form-group 
             label(for='year_of_birth') Year of Birth:
-            input#year_of_birth.form-control(type='text', placeholder="1880, c. 950, etc." name='year_of_birth' value=(undefined==artist ? '' : artist.year_of_birth))
+            input#year_of_birth.form-control(type='text', placeholder="1880, c. 950, etc." name='year_of_birth' maxlength="10" value=(undefined==artist ? '' : artist.year_of_birth))
             label(for='year_of_death') Year of Death:
-            input#year_of_death.form-control(type='text', placeholder="Year of death, or blank if living" name='year_of_death' value=(undefined==artist ? '' : artist.year_of_death))
+            input#year_of_death.form-control(type='text', placeholder="Year of death, or blank if living" maxlength="10" name='year_of_death' value=(undefined==artist ? '' : artist.year_of_death))
 
         div.form-group 
             label(for='bio') Biography:
-            input#bio.form-control(type='textarea', placeholder="Details about life" name='bio' value=(undefined==artist ? '' : artist.bio)) 
+            input#bio.form-control(type='textarea', placeholder="Details about life" maxlength="500" name='bio' value=(undefined==artist ? '' : artist.bio)) 
 
         button.btn.btn-primary(type='submit') Submit
 

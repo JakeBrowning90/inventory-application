@@ -6,9 +6,9 @@ block content
     form(method='POST' enctype='multipart/form-data') 
         div.form-group 
             label(for='title') *Title:
-            input.form-control(type='text' placeholder='Title of work' name='title' required value=(undefined==piece ? '' : piece.title))            
+            input.form-control(type='text' placeholder='Title of work' name='title' maxlength="100" required value=(undefined==piece ? '' : piece.title))            
             label(for='medium') *Medium:
-            input.form-control(type='text', placeholder='Oil on canvas / watercolour / marble / etc.' name='medium' required value=(undefined==piece ? '' : piece.medium))
+            input.form-control(type='text', placeholder='Oil on canvas / watercolour / marble / etc.' name='medium' maxlength="100" required value=(undefined==piece ? '' : piece.medium))
             label(for='artist') *Artist:
             select#artist.form-control(name="artist" required)
                 option(value='') --Select an Artist--
@@ -22,7 +22,7 @@ block content
                         option(value=artist._id) #{artist.sorted_name} 
             
             label(for='year') Year made:
-            input.form-control(type='text', placeholder='1565 / c. 1700 / 1850-1852 / etc.' name='year' required value=(undefined==piece ? '' : piece.year))
+            input.form-control(type='text', placeholder='1565 / c. 1700 / 1850-1852 / etc.' name='year' maxlength="20" required value=(undefined==piece ? '' : piece.year))
             
 
         div.form-group 
