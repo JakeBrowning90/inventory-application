@@ -44,23 +44,23 @@ exports.artist_create_get = asyncHandler(async (req, res, next) => {
 exports.artist_create_post = [
     body("first_name")
         .trim()
-        .isLength({ min: 1 })
-        .escape(),
+        .isLength({ min: 1 }),
+        // .escape(),
     body("family_name")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("year_of_birth")
         .optional({ values: "falsy" })
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("year_of_death")
         .optional({ values: "falsy" })
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("bio")
         .optional({ values: "falsy" })
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
 
     asyncHandler(async (req, res, next) => {
         const errors = validationResult(req);
@@ -147,23 +147,23 @@ exports.artist_update_post = [
     body("first_name")
     .optional({ values: "falsy" })
     .trim()
-    .isLength({ min: 1 })
-    .escape(),
+    .isLength({ min: 1 }),
+    // .escape(),
     body("family_name")
-    .trim()
-    .escape(),
+    .trim(),
+    // .escape(),
     body("year_of_birth")
     .optional({ values: "falsy" })
-    .trim()
-    .escape(),
+    .trim(),
+    // .escape(),
     body("year_of_death")
     .optional({ values: "falsy" })
-    .trim()
-    .escape(),
+    .trim(),
+    // .escape(),
     body("bio")
     .optional({ values: "falsy" })
-    .trim()
-    .escape(),
+    .trim(),
+    // .escape(),
 
     asyncHandler(async (req, res, next) => {
         const errors = validationResult(req);
