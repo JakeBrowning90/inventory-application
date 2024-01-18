@@ -62,32 +62,32 @@ exports.piece_create_get = asyncHandler(async (req, res, next) => {
 // Handle Piece create on POST
 exports.piece_create_post = [
     body("title")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("medium")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("artist")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("year")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("description")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("height")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("width")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("length")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("image")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
 
     asyncHandler(async (req, res, next) => {
         const errors = validationResult(req);
@@ -166,32 +166,32 @@ exports.piece_update_get = asyncHandler(async (req, res, next) => {
 // Handle Piece update on POST
 exports.piece_update_post = [
     body("title")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("medium")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("artist")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("year")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("description")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("height")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("width")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("length")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
     body("image")
-        .trim()
-        .escape(),
+        .trim(),
+        // .escape(),
 
     asyncHandler(async (req, res, next) => {
         const errors = validationResult(req);
