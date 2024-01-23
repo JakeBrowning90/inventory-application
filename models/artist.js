@@ -7,9 +7,10 @@ const ArtistSchema = new Schema({
     family_name: { type: String,  required: true,  maxLength: 30 },
     year_of_birth: { type: String, maxLength: 10 },
     year_of_death: { type: String, maxLength: 10},
-    bio: { type: String, maxLength: 500},
+    bio: { type: String, maxLength: 1000},
 });
 
+// Show the given name first for the detil page
 ArtistSchema.virtual("display_name").get(function () {
     let fullname = "";
 
@@ -23,6 +24,7 @@ ArtistSchema.virtual("display_name").get(function () {
     return fullname;
 });
 
+// Show the family name first for list
 ArtistSchema.virtual("sorted_name").get(function () {
     let fullname = "";
 
