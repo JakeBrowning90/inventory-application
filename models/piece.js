@@ -10,7 +10,7 @@ const PieceSchema = new Schema({
     description: { type: String, maxLength: 500},
     height: { type: Number, min: 0 },
     width: { type: Number, min: 0 },
-    length: { type: Number, min: 0 },
+    // length: { type: Number, min: 0 },
     image: { type: String, }
 });
 

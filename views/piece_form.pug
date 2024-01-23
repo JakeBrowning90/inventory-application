@@ -27,15 +27,15 @@ block content
 
         div.form-group 
             label(for='height') Height (cm):
-            input.form-control(type='number' step="0.01" placeholder='Height' name='height' value=(undefined==piece ? '' : piece.height)) 
+            input.form-control(type='number' required step="0.01" placeholder='Height' name='height' value=(undefined==piece ? '' : piece.height)) 
             label(for='width') Width (cm):
-            input.form-control(type='number' step="0.01" placeholder='Width' name='width' value=(undefined==piece ? '' : piece.width)) 
-            label(for='length') Length (cm):
-            input.form-control(type='number' step="0.01" placeholder='Length' name='length' value=(undefined==piece ? '' : piece.length))
+            input.form-control(type='number' required step="0.01" placeholder='Width' name='width' value=(undefined==piece ? '' : piece.width)) 
+            //- label(for='length') Length (cm):
+            //- input.form-control(type='number' step="0.01" placeholder='Length' name='length' value=(undefined==piece ? '' : piece.length))
 
         div.form-group 
             label(for='description') Description:
-            input#description.form-control(type='textarea', placeholder="Description" name='description' value=(undefined==piece ? '' : piece.description)) 
+            input#description.form-control(type='textarea', placeholder="Description" name='description' maxlength="500" value=(undefined==piece ? '' : piece.description)) 
 
         div.form-group 
             label(for='image') *Upload image: 

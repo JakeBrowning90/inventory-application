@@ -99,7 +99,7 @@ exports.piece_create_post = [
             description: req.body.description,
             height: req.body.height,
             width: req.body.width,
-            length: req.body.length,
+            // length: req.body.length,
             image: req.file.filename,
         });
 
@@ -186,8 +186,8 @@ exports.piece_update_post = [
     body("width")
         .trim(),
         // .escape(),
-    body("length")
-        .trim(),
+    // body("length")
+    //     .trim(),
         // .escape(),
     body("image")
         .trim(),
@@ -203,7 +203,7 @@ exports.piece_update_post = [
             description: req.body.description,
             height: req.body.height,
             width: req.body.width,
-            length: req.body.length,
+            // length: req.body.length,
             image: req.file.filename,
             _id: req.params.id,
         });
