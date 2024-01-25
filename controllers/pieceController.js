@@ -13,7 +13,7 @@ exports.index = asyncHandler(async (req, res, next) => {
     ]);
 
     res.render("index", {
-        title: "Art Gallery",
+        // title: "Art Gallery",
         artist_count: numArtists,
         piece_count: numPieces,
     });
