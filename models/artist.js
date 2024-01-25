@@ -38,6 +38,7 @@ ArtistSchema.virtual("sorted_name").get(function () {
     return fullname;
 });
 
+// Get URL to this artist's detail page
 ArtistSchema.virtual("url").get(function () {
     return`/catalog/artist/${this._id}`;
 });

@@ -10,7 +10,7 @@ exports.artist_list = asyncHandler(async (req, res, next) => {
         .exec();
 
     res.render("artist_list", {
-        title: "All Artists",
+        title: "Browse by Artist",
         artist_list: allArtists
     });
 });
@@ -19,7 +19,7 @@ exports.artist_list = asyncHandler(async (req, res, next) => {
 exports.artist_detail = asyncHandler(async (req, res, next) => {
     const [artist, allPiecesByArtist] = await Promise.all([
         Artist.findById(req.params.id).exec(),
-        Piece.find({ artist: req.params.id }, "title").exec(),
+        Piece.find({ artist: req.params.id }, "title image").exec(),
     ]);
 
     if (artist === null) {

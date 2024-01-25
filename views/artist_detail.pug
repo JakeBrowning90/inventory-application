@@ -1,7 +1,7 @@
 extends layout 
 
 block content 
-    h1 Artist Profile: #{title}
+    h1 #{title}
 
     // Unknown artist years, display nothing
     if !artist.year_of_birth && !artist.year_of_death
@@ -13,16 +13,19 @@ block content
     else 
         // Known artist birth and death
         p #{artist.year_of_birth} - #{artist.year_of_death} 
+    
+    p #[strong Portrait: ]
 
     p #[strong Biography: ] #{artist.bio}
 
     div(style='margin-left:20px;margin-top:20px')
 
-        h4 Pieces
+        h4 Pieces by #{title}
 
         dl
         each piece in artist_pieces
             dt
+            img(src=`/images/${piece.image}` alt="Image")
             a(href=piece.url) #{piece.title}
 
         else

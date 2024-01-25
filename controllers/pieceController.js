@@ -27,7 +27,7 @@ exports.piece_list = asyncHandler(async (req, res, next) => {
         .exec();
 
     res.render("piece_list", { 
-        title: "All Pieces", 
+        title: "Browse by Piece", 
         piece_list: allPieces });
 });
 
