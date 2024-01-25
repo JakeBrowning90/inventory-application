@@ -6,6 +6,7 @@ block content
         ul 
             each piece in piece_list 
                 li 
+                    img(src=`/images/${piece.image}` alt="Image" class="imgThumbnail")
                     a(href=piece.url) #{piece.title} 
                     | - #{piece.artist.display_name} 
 

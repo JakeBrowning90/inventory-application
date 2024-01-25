@@ -21,7 +21,7 @@ exports.index = asyncHandler(async (req, res, next) => {
 
 // Display list of all Pieces
 exports.piece_list = asyncHandler(async (req, res, next) => {
-    const allPieces = await Piece.find({}, "title artist")
+    const allPieces = await Piece.find({}, "title artist image")
         .sort({ title: 1 })
         .populate("artist")
         .exec();
