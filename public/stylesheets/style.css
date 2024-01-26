@@ -1,5 +1,6 @@
-body {
-  padding: 50px;
+html, body {
+  /* Make BG color white in final version */
+  background-color: rgb(238, 236, 236);
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -7,10 +8,17 @@ a {
   color: #00B7FF;
 }
 
+.siteHeader {
+  background-color: #393c41;
+  color: white;
+  height: 75px;
+}
+
 .sidebar-nav {
-  margin-top: 20px;
-  padding: 0;
   list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
 img {
