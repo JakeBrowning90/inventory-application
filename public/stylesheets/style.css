@@ -1,11 +1,38 @@
 html, body {
   /* Make BG color white in final version */
-  background-color: rgb(238, 236, 236);
+  background-color: rgb(246, 246, 142);
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
   color: #00B7FF;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+img {
+  /* padding: 20px; */
+  border: solid 1px black;
+  height: 200px;
+}
+
+.imgThumbnail {
+  height: 150px;
+  width: 150px;
+}
+
+.siteBody {
+  border: 3px solid orange;
+  margin: 10px;
+  /* height: 100%; */
 }
 
 .siteHeader {
@@ -14,19 +41,28 @@ a {
   height: 75px;
 }
 
-.sidebar-nav {
+.headerNav {
   list-style: none;
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
 
-img {
-  padding: 20px;
-  border: solid 1px black;
-  height: 200px;
+.piecePreview {
+  border: 3px solid green;
+  background-color: aliceblue;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
 }
 
-.imgThumbnail {
-  height: 150px;
+.welcomeBox {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 25rem;
+  margin-left: auto;
+  padding: 10px;
 }

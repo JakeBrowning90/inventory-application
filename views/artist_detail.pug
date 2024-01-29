@@ -22,11 +22,11 @@ block content
 
         h4 Pieces by #{title}
 
-        dl
+        ul
         each piece in artist_pieces
-            dt
-            img(src=`/images/${piece.image}` alt="Image")
-            a(href=piece.url) #{piece.title}
+            li(class="piecePreview")
+                img(src=`/images/${piece.image}` alt="Image" class="imgThumbnail")
+                a(href=piece.url) #{piece.title}
 
         else
             p This artist has no pieces in the collection.

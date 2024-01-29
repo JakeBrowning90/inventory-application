@@ -5,7 +5,7 @@ block content
     if piece_list.length 
         ul 
             each piece in piece_list 
-                li 
+                li(class="piecePreview") 
                     img(src=`/images/${piece.image}` alt="Image" class="imgThumbnail")
                     a(href=piece.url) #{piece.title} 
                     | - #{piece.artist.display_name} 

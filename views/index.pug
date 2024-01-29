@@ -1,16 +1,17 @@
 extends layout
 
 block content
-  h1 Welcome
-  p Browse famous works of art and learn about the creative minds behind them!
+  div(class="welcomeBox")
+    h1 Welcome
+    p Browse famous works of art and learn about the creative minds behind them!
 
-  h2 Current entries: 
+    h2 Current entries: 
 
-  ul
-    li #[strong Artists:] !{artist_count} 
-    li #[strong Pieces:] !{piece_count}
+    ul
+      li #[strong Artists:] !{artist_count} 
+      li #[strong Pieces:] !{piece_count}
 
-  p Created by Jake Browning for The Odin Project, 2024.
-  p (Artwork disclaimer)
-  p (Portfolio Link)
+    p Created by Jake Browning for The Odin Project, 2024.
+    p (Artwork disclaimer)
+    p (Portfolio Link)
 
