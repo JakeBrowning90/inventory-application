@@ -4,6 +4,10 @@ html, body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  /* display: grid;
+  grid-template-rows: 75px 1fr; */
+
 }
 
 a {
@@ -30,15 +34,20 @@ img {
 }
 
 .siteBody {
+  /* background-color: rgb(233, 233, 191); */
   border: 3px solid orange;
-  margin: 10px;
+  /* margin: 10px; */
+  margin-top: 90px;
+  padding: 20px;
   /* height: 100%; */
 }
 
 .siteHeader {
   background-color: #393c41;
-  color: white;
-  height: 75px;
+  position: fixed;
+  display: flex;
+  height: 90px;
+  width: 100%;
 }
 
 .headerNav {
@@ -46,23 +55,35 @@ img {
   display: flex;
   flex-direction: row;
   gap: 10px;
+  margin: auto;
+  color: white;
+}
+
+.headerNav > a {
+  color: white;
 }
 
 .piecePreview {
   border: 3px solid green;
+  color: #4a4a4a;
   background-color: aliceblue;
   margin: 10px;
   display: flex;
   flex-direction: column;
-  width: 300px;
+  height: 350px;
+  width: 200px;
+  gap: 10px;
 }
 
 .welcomeBox {
   background-color: white;
   display: flex;
   flex-direction: column;
+  height: 700px;
   gap: 10px;
   max-width: 25rem;
   margin-left: auto;
   padding: 10px;
+  box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.5);
+  border-radius: 0.25rem;
 }

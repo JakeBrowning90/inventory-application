@@ -8,7 +8,7 @@ block content
                 li(class="piecePreview") 
                     img(src=`/images/${piece.image}` alt="Image" class="imgThumbnail")
                     a(href=piece.url) #{piece.title} 
-                    | - #{piece.artist.display_name} 
+                    | #{piece.artist.display_name} 
 
     else 
         p There are no pieces in the database.
