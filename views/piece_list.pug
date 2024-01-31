@@ -3,7 +3,7 @@ extends layout
 block content 
     h1= title 
     if piece_list.length 
-        ul 
+        ul(class="pieceGrid")
             each piece in piece_list 
                 li(class="piecePreview") 
                     img(src=`/images/${piece.image}` alt="Image" class="imgThumbnail")

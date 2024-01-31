@@ -1,6 +1,5 @@
 html, body {
-  /* Make BG color white in final version */
-  background-color: rgb(246, 246, 142);
+  background-color: rgb(216, 216, 216);
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
@@ -12,6 +11,7 @@ html, body {
 
 a {
   color: #00B7FF;
+  /* color: #ff0026; */
 }
 
 h1 {
@@ -24,13 +24,15 @@ h2 {
 
 img {
   /* padding: 20px; */
-  border: solid 1px black;
+  /* border: solid 1px black; */
   height: 200px;
 }
 
 .imgThumbnail {
-  height: 150px;
-  width: 150px;
+  object-fit: cover;
+  height: 300px;
+  /* width: 100%; */
+  aspect-ratio: 1;
 }
 
 .siteBody {
@@ -63,16 +65,28 @@ img {
   color: white;
 }
 
+.pieceGrid {
+  background-color: rgb(253, 207, 215);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  overflow: auto;
+}
+
 .piecePreview {
-  border: 3px solid green;
   color: #4a4a4a;
-  background-color: aliceblue;
-  margin: 10px;
+    /* Make BG color white in final version */
+  background-color: rgb(192, 221, 247);
+  /* margin: 10px; */
   display: flex;
   flex-direction: column;
-  height: 350px;
-  width: 200px;
+  /* height: 350px; */
+  /* width: 200px; */
   gap: 10px;
+}
+
+.piecePreview > a {
+  color: #4a4a4a;
 }
 
 .welcomeBox {
