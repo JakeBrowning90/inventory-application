@@ -1,5 +1,5 @@
 html, body {
-  background-color: rgb(216, 216, 216);
+  /* background-color: rgb(216, 216, 216); */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,11 @@ html, body {
 
 a {
   color: #00B7FF;
-  /* color: #ff0026; */
+}
+
+form, .form-group  {
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -28,6 +32,11 @@ img {
   height: 200px;
 }
 
+.defaultBackground {
+  height: 100%;
+  padding: 40px;
+}
+
 .imgThumbnail {
   object-fit: cover;
   height: 300px;
@@ -37,11 +46,10 @@ img {
 
 .siteBody {
   /* background-color: rgb(233, 233, 191); */
-  border: 3px solid orange;
-  /* margin: 10px; */
+  /* border: 3px solid orange; */
   margin-top: 90px;
-  padding: 20px;
-  /* height: 100%; */
+  /* padding: 20px; */
+  height: 100%;
 }
 
 .siteHeader {
@@ -61,7 +69,7 @@ img {
   color: white;
 }
 
-.headerNav > a {
+.headerNav * {
   color: white;
 }
 
@@ -89,6 +97,15 @@ img {
   color: #4a4a4a;
 }
 
+.welcomeBackground {
+  /* replace with lower-res version */
+  background-image: url(../backgrounds/kienValley.jpg);
+  background-size: cover;
+  /* height: 1fr; */
+  height: 100%;
+  padding: 40px;
+}
+
 .welcomeBox {
   background-color: white;
   display: flex;
@@ -96,6 +113,7 @@ img {
   height: 700px;
   gap: 10px;
   max-width: 25rem;
+  /* margin:  0 20px auto auto; */
   margin-left: auto;
   padding: 10px;
   box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.5);

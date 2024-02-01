@@ -1,24 +1,24 @@
 extends layout 
 
 block content 
+    div(class="defaultBackground")
+        h1 #{title}: #{artist.display_name}
 
-    h1 #{title}: #{artist.display_name}
+        if artist_pieces.length 
 
-    if artist_pieces.length 
+            p #[strong Delete the following pieces before attemping to delete this artist:]
 
-        p #[strong Delete the following pieces before attemping to delete this artist:]
+            div(style='margin-left:20px;margin-top:20px') 
+                dl 
+                    each piece in artist_pieces
+                        dt 
+                            a(href=piece.url) #{piece.title} 
 
-        div(style='margin-left:20px;margin-top:20px') 
-            dl 
-                each piece in artist_pieces
-                    dt 
-                        a(href=piece.url) #{piece.title} 
+        else 
+            p Are you sure you want to delete this artist? 
 
-    else 
-        p Are you sure you want to delete this artist? 
+            form(method='POST')
+                div.form-group 
+                    input#artistid.form-control(type='hidden', name='artistid', value=artist._id) 
 
-        form(method='POST')
-            div.form-group 
-                input#artistid.form-control(type='hidden', name='artistid', value=artist._id) 
-
-            button.btn.btn-primary(type='submit') Delete
+                button.btn.btn-primary(type='submit') Delete

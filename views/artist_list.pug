@@ -1,12 +1,13 @@
 extends layout 
 
 block content 
-    h1= title 
-    if artist_list.length 
-        ul 
-            each artist in artist_list 
-                li 
-                    a(href=artist.url) #{artist.sorted_name} 
+    div(class="defaultBackground")
+        h1= title 
+        if artist_list.length 
+            ul 
+                each artist in artist_list 
+                    li 
+                        a(href=artist.url) #{artist.sorted_name} 
 
-    else 
-        p There are no artists in the database.
+        else 
+            p There are no artists in the database.
