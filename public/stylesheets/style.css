@@ -16,6 +16,8 @@ a {
 form, .form-group  {
   display: flex;
   flex-direction: column;
+  max-width: 800px;
+  gap: 5px;
 }
 
 h1 {
@@ -76,20 +78,20 @@ img {
 .pieceGrid {
   background-color: rgb(253, 207, 215);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  max-width: 1000px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   overflow: auto;
+  margin: 0 auto 0 auto;
 }
 
 .piecePreview {
   color: #4a4a4a;
     /* Make BG color white in final version */
   background-color: rgb(192, 221, 247);
-  /* margin: 10px; */
   display: flex;
   flex-direction: column;
-  /* height: 350px; */
-  /* width: 200px; */
+  max-width: 300px;
   gap: 10px;
 }
 
