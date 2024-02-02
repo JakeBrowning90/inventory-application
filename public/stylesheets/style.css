@@ -70,8 +70,23 @@ img {
   background-color: #393c41;
   position: fixed;
   display: flex;
+  /* justify-content: center; */
+  align-items: center;
   height: 90px;
   width: 100%;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.5);
+}
+
+.headerContents {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 40px 0 40px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+  color: white;
 }
 
 .headerNav {
@@ -79,8 +94,8 @@ img {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  margin: auto;
-  color: white;
+  /* margin: auto; */
+  /* color: white; */
 }
 
 .headerNav * {
@@ -126,7 +141,6 @@ img {
   /* height: 700px; */
   gap: 10px;
   max-width: 25rem;
-  /* margin:  0 20px auto auto; */
   margin-left: auto;
   padding: 20px;
   box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.5);

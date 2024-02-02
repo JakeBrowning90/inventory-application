@@ -11,7 +11,8 @@ html(lang='en')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     div(class='siteHeader')
-      block sidebar
+      //- block sidebar
+      div(class='headerContents')
         ul(class='headerNav')
           li
             //- TODO - Replace with a logo
@@ -21,16 +22,11 @@ html(lang='en')
           li
             a(href='/catalog/pieces') All pieces
           li
-            hr
-          li
             a(href='/catalog/artist/create') Create new artist
           li
             a(href='/catalog/piece/create') Create new piece
-          li
-              hr
-          li
-            //- TODO - Implement authorisation
-            p User Login
+        //- TODO - Implement authorisation
+        p User Login (TBA)
     div(class='siteBody')
       block content
 
