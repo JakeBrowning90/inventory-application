@@ -2,9 +2,9 @@ extends layout
 
 block content 
     div(class="defaultBackground")
-        h1= title 
+        h1(class="defaultSubheading")= title 
         if artist_list.length 
-            ul 
+            ul(class="artistUL") 
                 each artist in artist_list 
                     li 
                         a(href=artist.url) #{artist.sorted_name} 

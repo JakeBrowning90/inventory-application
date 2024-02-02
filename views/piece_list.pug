@@ -2,7 +2,7 @@ extends layout
 
 block content 
     div(class="defaultBackground")
-        h1= title 
+        h1(class="defaultSubheading")= title 
         if piece_list.length 
             ul(class="pieceGrid")
                 each piece in piece_list 

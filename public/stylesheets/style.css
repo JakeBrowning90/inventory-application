@@ -1,23 +1,24 @@
 html, body {
-  /* background-color: rgb(216, 216, 216); */
+  background-color: white;
+  color: #4a4a4a;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  /* display: grid;
-  grid-template-rows: 75px 1fr; */
-
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 a {
-  color: #00B7FF;
+  color: #4a4a4a;
 }
 
-form, .form-group  {
+form  {
+  background-color: aquamarine;
   display: flex;
   flex-direction: column;
-  max-width: 800px;
+  max-width: 1000px;
   gap: 5px;
+  margin: 0 auto 0 auto;
 }
 
 h1 {
@@ -29,14 +30,28 @@ h2 {
 }
 
 img {
-  /* padding: 20px; */
-  /* border: solid 1px black; */
   height: 200px;
 }
 
+.artistUL {
+  background-color: rgb(250, 225, 177);
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.defaultSubheading {
+  max-width: 1000px;
+  margin: auto;
+  /* padding: 10px; */
+}
+
 .defaultBackground {
-  height: 100%;
+  height: calc(100% - 80px);
   padding: 40px;
+  /* padding: 0 auto 0 auto; */
 }
 
 .imgThumbnail {
@@ -47,10 +62,7 @@ img {
 }
 
 .siteBody {
-  /* background-color: rgb(233, 233, 191); */
-  /* border: 3px solid orange; */
   margin-top: 90px;
-  /* padding: 20px; */
   height: 100%;
 }
 
@@ -103,8 +115,7 @@ img {
   /* replace with lower-res version */
   background-image: url(../backgrounds/kienValley.jpg);
   background-size: cover;
-  /* height: 1fr; */
-  height: 100%;
+  height: calc(100% - 80px);
   padding: 40px;
 }
 
@@ -112,12 +123,12 @@ img {
   background-color: white;
   display: flex;
   flex-direction: column;
-  height: 700px;
+  /* height: 700px; */
   gap: 10px;
   max-width: 25rem;
   /* margin:  0 20px auto auto; */
   margin-left: auto;
-  padding: 10px;
+  padding: 20px;
   box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.5);
   border-radius: 0.25rem;
 }

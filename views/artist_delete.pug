@@ -2,7 +2,7 @@ extends layout
 
 block content 
     div(class="defaultBackground")
-        h1 #{title}: #{artist.display_name}
+        h1(class="defaultSubheading") #{title}: #{artist.display_name}
 
         if artist_pieces.length 
 

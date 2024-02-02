@@ -2,7 +2,7 @@ extends layout
 
 block content 
     div(class="defaultBackground")
-        h1 #{title}
+        h1(class="defaultSubheading")  #{title}
 
         // Unknown artist years, display nothing
         if !artist.year_of_birth && !artist.year_of_death
