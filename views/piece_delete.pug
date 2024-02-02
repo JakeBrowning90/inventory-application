@@ -1,24 +1,14 @@
 extends layout 
 
 block content 
-    div(class="defaultBackground")
-        h1(class="defaultSubheading") #{title}: #{piece.title}
+    div(class="backgroundDefault")
+        div(class='centeredContent')
+            h1(class="defaultSubheading") #{title}: #{piece.title}
+            
+            p Are you sure you want to delete this piece? 
 
-        //- if artist_pieces.length 
+            form(method='POST')
+                div.form-group 
+                    input#pieceid.form-control(type='hidden', name='pieceid', value=piece._id) 
 
-        //-     p #[strong Delete the following pieces before attemping to delete this artist:]
-
-        //-     div(style='margin-left:20px;margin-top:20px') 
-        //-         dl 
-        //-             each piece in artist_pieces
-        //-                 dt 
-        //-                     a(href=piece.url) #{piece.title} 
-
-        //- else 
-        p Are you sure you want to delete this piece? 
-
-        form(method='POST')
-            div.form-group 
-                input#pieceid.form-control(type='hidden', name='pieceid', value=piece._id) 
-
-            button.btn.btn-primary(type='submit') Delete
+                button.btn.btn-primary(type='submit') Delete

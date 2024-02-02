@@ -13,16 +13,19 @@ a {
 }
 
 form  {
-  background-color: aquamarine;
+  background-color: rgb(219, 219, 241);
   display: flex;
   flex-direction: column;
   max-width: 1000px;
-  gap: 5px;
+  gap: 10px;
   margin: 0 auto 0 auto;
+  padding: 20px;
+  box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.5);
+  border-radius: 0.25rem;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 h2 {
@@ -42,16 +45,35 @@ img {
   gap: 10px;
 }
 
+.backgroundDefault {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+
+}
+
+.backgroundWelcome {
+  display: flex;
+  justify-content: center;
+  height: calc(100% - 40px);
+  padding-top: 40px;
+  /* replace with lower-res version */
+  background-image: url(../backgrounds/kienValley.jpg);
+  background-size: cover;
+
+}
+
+.centeredContent {
+  width: 100%;
+  max-width: 1000px;
+  /* padding: 0 40px; */
+  margin: 0 40px 0 40px;
+}
+
 .defaultSubheading {
   max-width: 1000px;
   margin: auto;
   /* padding: 10px; */
-}
-
-.defaultBackground {
-  height: calc(100% - 80px);
-  padding: 40px;
-  /* padding: 0 auto 0 auto; */
 }
 
 .imgThumbnail {
@@ -59,6 +81,27 @@ img {
   height: 300px;
   /* width: 100%; */
   aspect-ratio: 1;
+}
+
+.headerContents {
+  /* width: 100%; */
+  /* margin: auto; */
+  display: flex;
+  flex-direction: row;
+  /* gap: 20px; */
+  justify-content: space-between;
+  color: white;
+}
+
+.headerNav {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.headerNav * {
+  color: white;
 }
 
 .siteBody {
@@ -70,36 +113,11 @@ img {
   background-color: #393c41;
   position: fixed;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
   height: 90px;
   width: 100%;
   box-shadow: 0 0 4px 0 rgba(0,0,0,0.5);
-}
-
-.headerContents {
-  width: 100%;
-  max-width: 1000px;
-  padding: 0 40px 0 40px;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  justify-content: space-between;
-  color: white;
-}
-
-.headerNav {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  /* margin: auto; */
-  /* color: white; */
-}
-
-.headerNav * {
-  color: white;
 }
 
 .pieceGrid {
@@ -124,14 +142,6 @@ img {
 
 .piecePreview > a {
   color: #4a4a4a;
-}
-
-.welcomeBackground {
-  /* replace with lower-res version */
-  background-image: url(../backgrounds/kienValley.jpg);
-  background-size: cover;
-  height: calc(100% - 80px);
-  padding: 40px;
 }
 
 .welcomeBox {

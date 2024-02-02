@@ -1,22 +1,23 @@
 extends layout
 
 block content
-  div(class="welcomeBackground")
-    div(class="welcomeBox")
-      h1 Welcome
-      p Browse famous works of art and learn about the creative minds behind them!
+  div(class="backgroundWelcome")
+    div(class="centeredContent")
+      div(class="welcomeBox")
+        h1 Welcome
+        p Browse famous works of art and learn about the creative minds behind them!
 
-      h2 Current entries: 
+        h2 Current entries: 
 
-      ul
-        li #[strong Artists:] !{artist_count} 
-        li #[strong Pieces:] !{piece_count}
+        ul
+          li #[strong Artists:] !{artist_count} 
+          li #[strong Pieces:] !{piece_count}
 
-      p 
-      | Important disclaimer: 
-      | This site is a web development demonstration, mimicking the style of the site for the National Gallery in London. 
-      | All artwork and educational information presented comes from resources freely available from the National Gallery's official website.
-      a(href="https://www.nationalgallery.org.uk/" target="_blank") National Gallery
-      p Created by Jake Browning for The Odin Project, 2024.
-      a(href="https://jakebrowning90.github.io/personal-portfolio/" target="_blank") My Portfolio
+        p 
+        | Important disclaimer: 
+        | This site is a web development demonstration, mimicking the style of the site for the National Gallery in London. 
+        | All artwork and educational information presented comes from resources freely available from the National Gallery's official website.
+        a(href="https://www.nationalgallery.org.uk/" target="_blank") National Gallery
+        p Created by Jake Browning for The Odin Project, 2024.
+        a(href="https://jakebrowning90.github.io/personal-portfolio/" target="_blank") My Portfolio
 

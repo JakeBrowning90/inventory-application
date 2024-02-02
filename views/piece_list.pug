@@ -1,15 +1,16 @@
 extends layout 
 
 block content 
-    div(class="defaultBackground")
-        h1(class="defaultSubheading")= title 
-        if piece_list.length 
-            ul(class="pieceGrid")
-                each piece in piece_list 
-                    li(class="piecePreview") 
-                        img(src=`/images/${piece.image}` alt="Image" class="imgThumbnail")
-                        a(href=piece.url) #{piece.title} 
-                        | #{piece.artist.display_name} 
+    div(class="backgroundDefault")
+        div(class='centeredContent')
+            h1(class="defaultSubheading")= title 
+            if piece_list.length 
+                ul(class="pieceGrid")
+                    each piece in piece_list 
+                        li(class="piecePreview") 
+                            img(src=`/images/${piece.image}` alt="Image" class="imgThumbnail")
+                            a(href=piece.url) #{piece.title} 
+                            | #{piece.artist.display_name} 
 
-        else 
-            p There are no pieces in the database.
+            else 
+                p There are no pieces in the database.

@@ -1,41 +1,42 @@
 extends layout 
 
 block content 
-    div(class="defaultBackground")
-        h1(class="defaultSubheading")  #{title}
+    div(class="backgroundDefault")
+        div(class='centeredContent')
+            h1(class="defaultSubheading")  #{title}
 
-        // Unknown artist years, display nothing
-        if !artist.year_of_birth && !artist.year_of_death
+            // Unknown artist years, display nothing
+            if !artist.year_of_birth && !artist.year_of_death
 
-        else if artist.year_of_birth && !artist.year_of_death
-            // Living artist
-            p Born #{artist.year_of_birth}
+            else if artist.year_of_birth && !artist.year_of_death
+                // Living artist
+                p Born #{artist.year_of_birth}
 
-        else 
-            // Known artist birth and death
-            p #{artist.year_of_birth} - #{artist.year_of_death} 
-        
-        p #[strong Portrait: ]
+            else 
+                // Known artist birth and death
+                p #{artist.year_of_birth} - #{artist.year_of_death} 
+            
+            p #[strong Portrait: ]
 
-        p #[strong Biography: ] #{artist.bio}
+            p #[strong Biography: ] #{artist.bio}
 
-        div(style='margin-left:20px;margin-top:20px')
+            div(style='margin-left:20px;margin-top:20px')
 
-            h4 Pieces by #{title}
+                h4 Pieces by #{title}
 
-            ul
-            each piece in artist_pieces
-                li(class="piecePreview")
-                    img(src=`/images/${piece.image}` alt="Image" class="imgThumbnail")
-                    a(href=piece.url) #{piece.title}
+                ul
+                each piece in artist_pieces
+                    li(class="piecePreview")
+                        img(src=`/images/${piece.image}` alt="Image" class="imgThumbnail")
+                        a(href=piece.url) #{piece.title}
 
-            else
-                p This artist has no pieces in the collection.
+                else
+                    p This artist has no pieces in the collection.
 
-        hr
+            hr
 
-        p
-            a(href=artist.url+'/delete') Delete artist
+            p
+                a(href=artist.url+'/delete') Delete artist
 
-        p
-            a(href=artist.url+'/update') Update artist
+            p
+                a(href=artist.url+'/update') Update artist
