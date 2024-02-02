@@ -36,20 +36,27 @@ img {
   height: 200px;
 }
 
+.artistDetailField {
+  margin-bottom: 10px;
+}
+
 .artistUL {
-  background-color: rgb(250, 225, 177);
   max-width: 1000px;
   margin: auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  list-style: inside disc;
+}
+
+.artistLI {
+  font-size: 1.5rem;
 }
 
 .backgroundDefault {
   display: flex;
   justify-content: center;
   height: 100%;
-
 }
 
 .backgroundWelcome {
@@ -57,6 +64,7 @@ img {
   justify-content: center;
   height: calc(100% - 40px);
   padding-top: 40px;
+
   /* replace with lower-res version */
   background-image: url(../backgrounds/kienValley.jpg);
   background-size: cover;
@@ -66,14 +74,14 @@ img {
 .centeredContent {
   width: 100%;
   max-width: 1000px;
-  /* padding: 0 40px; */
   margin: 0 40px 0 40px;
 }
 
 .defaultSubheading {
   max-width: 1000px;
-  margin: auto;
-  /* padding: 10px; */
+  margin: auto auto 10px auto;
+  padding: 10px 0 10px 0 ; 
+  border-bottom: #4a4a4a 1px solid;
 }
 
 .imgThumbnail {
@@ -120,28 +128,38 @@ img {
   box-shadow: 0 0 4px 0 rgba(0,0,0,0.5);
 }
 
+.options {
+  border-top:  #4a4a4a 1px solid;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 5px;
+}
+
 .pieceGrid {
-  background-color: rgb(253, 207, 215);
+  /* background-color: rgb(253, 207, 215); */
   display: grid;
-  max-width: 1000px;
+  /* max-width: 1000px; */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   overflow: auto;
-  margin: 0 auto 0 auto;
+  padding-bottom: 40px;
 }
 
 .piecePreview {
   color: #4a4a4a;
     /* Make BG color white in final version */
-  background-color: rgb(192, 221, 247);
+  background-color: white;
   display: flex;
   flex-direction: column;
-  max-width: 300px;
+  width: 100%;
+  max-width: 330px;
   gap: 10px;
 }
 
-.piecePreview > a {
+.piecePreview > * {
   color: #4a4a4a;
+  margin-bottom: 5px;
 }
 
 .welcomeBox {

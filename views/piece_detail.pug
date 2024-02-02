@@ -3,11 +3,11 @@ extends layout
 block content 
     div(class="backgroundDefault")
         div(class='centeredContent')
-            h1(class="defaultSubheading") #{title} 
+            //- h1(class="defaultSubheading") #{title} 
             
             img(src=`/images/${piece.image}` alt="Image")
             //- p #{piece.image}
-
+            p #[strong Title: ]  #{title} 
             p #[strong Artist: ]
                 a(href=piece.artist.url) #{piece.artist.display_name}
             p #[strong Year made: ] #{piece.year} 

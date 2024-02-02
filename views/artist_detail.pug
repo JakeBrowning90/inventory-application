@@ -10,21 +10,19 @@ block content
 
             else if artist.year_of_birth && !artist.year_of_death
                 // Living artist
-                p Born #{artist.year_of_birth}
+                h2(class="artistDetailField") Born #{artist.year_of_birth}
 
             else 
                 // Known artist birth and death
-                p #{artist.year_of_birth} - #{artist.year_of_death} 
+                h2(class="artistDetailField") #{artist.year_of_birth} - #{artist.year_of_death} 
             
-            p #[strong Portrait: ]
+            //- p #[strong Portrait: ]
 
-            p #[strong Biography: ] #{artist.bio}
+            p(class="artistDetailField") #{artist.bio}
 
-            div(style='margin-left:20px;margin-top:20px')
+            h2(class="artistDetailField") Pieces by #{title}
 
-                h4 Pieces by #{title}
-
-                ul
+            ul(class='pieceGrid')
                 each piece in artist_pieces
                     li(class="piecePreview")
                         img(src=`/images/${piece.image}` alt="Image" class="imgThumbnail")
@@ -33,10 +31,8 @@ block content
                 else
                     p This artist has no pieces in the collection.
 
-            hr
-
-            p
-                a(href=artist.url+'/delete') Delete artist
-
-            p
-                a(href=artist.url+'/update') Update artist
+            div(class='options')
+                p
+                    a(href=artist.url+'/delete') Delete artist
+                p
+                    a(href=artist.url+'/update') Update artist
