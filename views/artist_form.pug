@@ -22,7 +22,7 @@ block content
                     label(for='bio') Biography:
                     textarea#bio(rows='5' placeholder="Details about life" maxlength="1000" name='bio' value=(undefined==artist ? '' : artist.bio)) 
                 
-                button.btn.btn-primary.wholeRow(type='submit') Submit
+                button.controlButton.wholeRow(type='submit') Submit
 
             if errors 
                 ul 
