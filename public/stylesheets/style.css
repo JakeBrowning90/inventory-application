@@ -157,7 +157,7 @@ img {
 } 
 
 #pieceDetailCard {
-  background-color: rgba(255, 255, 255, 0.612);
+  background-color: rgb(255, 255, 255);
   box-sizing: border-box;
   max-height: 100%;
   max-width: 30rem;
