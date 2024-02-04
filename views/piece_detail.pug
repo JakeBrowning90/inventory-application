@@ -2,33 +2,34 @@ extends layout
 
 block content 
     div(class="backgroundDefault")
-        div(class='centeredContent')
+        //- div(class='centeredContent')
+        div(class='fullContent')
             //- h1(class="defaultSubheading") #{title} 
             
-            img(src=`/images/${piece.image}` alt="Image")
-            //- p #{piece.image}
-            p #[strong Title: ]  #{title} 
-            p #[strong Artist: ]
-                a(href=piece.artist.url) #{piece.artist.display_name}
-            p #[strong Year made: ] #{piece.year} 
-            p #[strong Medium: ] #{piece.medium}
-            // To do: make dimensions conditional
-            if piece.length 
-                // display 3 dimensions if item has length
-                p #[strong Dimensions: ] #{piece.height} x #{piece.width} x #{piece.length} cm 
-            else if !piece.width && !piece.length 
-                // display height only if no width or length given
-                p #[strong Dimensions: ] #{piece.height} cm (height)
-            else 
-                // display height and width as default (ie most paintings)
-                p #[strong Dimensions: ] #{piece.height} x #{piece.width} cm 
+            
+            div.pieceDetailCard
+                p #[strong Title: ]  #{title} 
+                p #[strong Artist: ]
+                    a(href=piece.artist.url) #{piece.artist.display_name}
+                p #[strong Year made: ] #{piece.year} 
+                p #[strong Medium: ] #{piece.medium}
+                // To do: make dimensions conditional
+                if piece.length 
+                    // display 3 dimensions if item has length
+                    p #[strong Dimensions: ] #{piece.height} x #{piece.width} x #{piece.length} cm 
+                else if !piece.width && !piece.length 
+                    // display height only if no width or length given
+                    p #[strong Dimensions: ] #{piece.height} cm (height)
+                else 
+                    // display height and width as default (ie most paintings)
+                    p #[strong Dimensions: ] #{piece.height} x #{piece.width} cm 
 
-            p #[strong Description: ] #{piece.description} 
+                p #[strong Description: ] #{piece.description} 
 
-            hr
-
-            p
-                a(href=piece.url+'/delete') Delete piece
-
-            p
-                a(href=piece.url+'/update') Update piece
+                hr
+                p
+                    a(href=piece.url+'/delete') Delete piece
+                p
+                    a(href=piece.url+'/update') Update piece
+            
+            img.pieceDetailImage(src=`/images/${piece.image}` alt="Image")
