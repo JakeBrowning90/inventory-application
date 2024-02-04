@@ -4,8 +4,15 @@ html, body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  /* height: 100%; */
   box-sizing: border-box;
+}
+
+html {
+ height: 100%;
+}
+body {
+  min-height: 100vh;
 }
 
 a {
@@ -121,24 +128,48 @@ img {
 }
 
 .fullContent {
+  height: 100%;
   width: 100%;
-  background-color: #393c41;
+  background-color: #747982;
   display: flex;
-  flex-direction: row;
-  /* color: white; */
+  flex-direction: row;  
+  /* box-sizing: border-box; */
+  /* color: white; */ 
   /* max-width: 1000px; */
   /* margin: auto; */
 }
 
 .pieceDetailImage {
-
+  box-sizing: border-box;
+  /* height: 100%; */
   width: 100%;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
 } 
 
 .pieceDetailCard {
-  background-color: white;
-  
-  z-index: 99;
+  background-color: rgba(255, 255, 255, 0.612);
+  max-width: 30rem;
+  padding: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.pieceDetailControls { 
+  background-color: rgba(255, 0, 0, 0.412)
+}
+
+.pieceDetailKeyFacts {
+  background-color: rgba(255, 255, 0, 0.357)
+}
+
+.pieceDetailDescription { 
+  background-color: rgba(0, 128, 0, 0.393)
+}
+
+.pieceDetailButtons {
+  background-color: rgba(0, 0, 255, 0.379)
 }
 
 .defaultSubheading {
@@ -190,6 +221,7 @@ img {
   height: 90px;
   width: 100%;
   box-shadow: 0 0 4px 0 rgba(0,0,0,0.5);
+  z-index: 3;
 }
 
 .options {
