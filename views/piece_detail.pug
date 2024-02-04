@@ -6,34 +6,36 @@ block content
         div(class='fullContent')
             //- h1(class="defaultSubheading") #{title} 
             
-            
-            div.pieceDetailCard
-                div.pieceDetailControls
-                    button.pieceDetailButton Key Facts
-                    button.pieceDetailButton  Description
-                    button.pieceDetailButton  Options
-                div.pieceDetailKeyFacts
-                    p #[strong Title: ]  #{title} 
-                    p #[strong Artist: ]
-                        a(href=piece.artist.url) #{piece.artist.display_name}
-                    p #[strong Year made: ] #{piece.year} 
-                    p #[strong Medium: ] #{piece.medium}
-                    // To do: make dimensions conditional
-                    if piece.length 
-                        // display 3 dimensions if item has length
-                        p #[strong Dimensions: ] #{piece.height} x #{piece.width} x #{piece.length} cm 
-                    else if !piece.width && !piece.length 
-                        // display height only if no width or length given
-                        p #[strong Dimensions: ] #{piece.height} cm (height)
-                    else 
-                        // display height and width as default (ie most paintings)
-                        p #[strong Dimensions: ] #{piece.height} x #{piece.width} cm 
-                
-                div.pieceDetailDescription
-                    p #[strong Description: ] #{piece.description} 
 
-                div.pieceDetailButtons
-                    a(href=piece.url+'/delete') Delete piece
-                    a(href=piece.url+'/update') Update piece
+            div#pieceDetailCard
+                button.pieceDetailToggle View info
+                div#pieceDetailBody.hide
+                    div.pieceDetailControls
+                        button.pieceDetailButton Key Facts
+                        button.pieceDetailButton Description
+                        button.pieceDetailButton Options
+                    div.pieceDetailKeyFacts
+                        p Title:  #{title} 
+                        p Artist: 
+                            a(href=piece.artist.url) #{piece.artist.display_name}
+                        p Year made: #{piece.year} 
+                        p Medium:  #{piece.medium}
+                        // To do: make dimensions conditional
+                        if piece.length 
+                            // display 3 dimensions if item has length
+                            p Dimensions: #{piece.height} x #{piece.width} x #{piece.length} cm 
+                        else if !piece.width && !piece.length 
+                            // display height only if no width or length given
+                            p Dimensions: #{piece.height} cm (height)
+                        else 
+                            // display height and width as default (ie most paintings)
+                            p Dimensions: #{piece.height} x #{piece.width} cm 
+                    
+                    div.pieceDetailDescription
+                        p Description: #{piece.description} 
+
+                    div.pieceDetailButtons
+                        a(href=piece.url+'/delete') Delete piece
+                        a(href=piece.url+'/update') Update piece
             
             img.pieceDetailImage(src=`/images/${piece.image}` alt="Image")
