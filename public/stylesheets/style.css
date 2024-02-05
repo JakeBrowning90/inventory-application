@@ -11,6 +11,7 @@ html, body {
 html {
  height: 100%;
 }
+
 body {
   min-height: 100vh;
 }
@@ -114,7 +115,6 @@ img {
   justify-content: center;
   height: calc(100% - 40px);
   padding-top: 40px;
-
   /* replace with lower-res version */
   background-image: url(../backgrounds/kienValley.jpg);
   background-size: cover;
@@ -198,8 +198,7 @@ img {
 }
 
 .headerContents {
-  /* width: 100%; */
-  /* margin: auto; */
+
   display: flex;
   flex-direction: row;
   /* gap: 20px; */
@@ -218,6 +217,10 @@ img {
   color: white;
 }
 
+.showNavButton {
+ color: white;
+}
+
 .siteBody {
   margin-top: 90px;
   height: 100%;
@@ -233,6 +236,25 @@ img {
   width: 100%;
   box-shadow: 0 0 4px 0 rgba(0,0,0,0.5);
   z-index: 3;
+}
+
+#siteMenu {
+  background-color: #d5e2f0;
+  font-size: 1.5rem;
+  gap: 10px;
+  height: calc(100% - 90px);
+  margin-top: 90px;
+  padding: 20px;
+  position: fixed;
+  width: 25rem;
+  z-index: 3;
+}
+
+.siteMenuNav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 20px;
 }
 
 .options {
