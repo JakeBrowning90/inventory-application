@@ -9,28 +9,31 @@ block content
             div#pieceDetailCard
                 button.pieceDetailToggle View info
                 div#pieceDetailBody.hide
-                    div#pieceDetailKeyFacts
-                        p Title:  #{title} 
-                        p Artist: 
-                            a(href=piece.artist.url) #{piece.artist.display_name}
-                        p Year made: #{piece.year} 
-                        p Medium:  #{piece.medium}
-                        // To do: make dimensions conditional
-                        if piece.length 
-                            // display 3 dimensions if item has length
-                            p Dimensions: #{piece.height} x #{piece.width} x #{piece.length} cm 
-                        else if !piece.width && !piece.length 
-                            // display height only if no width or length given
-                            p Dimensions: #{piece.height} cm (height)
-                        else 
-                            // display height and width as default (ie most paintings)
-                            p Dimensions: #{piece.height} x #{piece.width} cm 
                     
-                    div#pieceDetailDescription.
-                        Description: #{piece.description} 
+                    table.pieceDetailSection
+                        tr
+                            td Title
+                            td #{title} 
+                        tr
+                            td Artist
+                            td 
+                                a(href=piece.artist.url) #{piece.artist.display_name}
+                        tr
+                            td Year made
+                            td #{piece.year} 
+                        tr
+                            td Medium
+                            td #{piece.medium}
+                        tr
+                            td Dimensions
+                            td #{piece.height} x #{piece.width} cm 
 
-                    div#pieceDetailButtons
-                        a(href=piece.url+'/delete') Delete piece
+                    div.pieceDetailSection
+                        p #{piece.description} 
+
+                    div.pieceDetailSection
                         a(href=piece.url+'/update') Update piece
+                        a(href=piece.url+'/delete') Delete piece
+                        
             
             img.pieceDetailImage(src=`/images/${piece.image}` alt="Image")

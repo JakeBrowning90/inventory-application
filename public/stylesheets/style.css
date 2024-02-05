@@ -176,18 +176,11 @@ img {
   gap: 10px;
 }
 
-#pieceDetailKeyFacts {
+.pieceDetailSection {
   background-color: #e9edf560;
+  margin: 0 20px;
+  font-size: 1.2rem;
 }
-
-#pieceDetailDescription { 
-  background-color: #e9edf560;
-}
-
-#pieceDetailButtons {
-  background-color: #e9edf560;
-}
-
 
 .defaultSubheading {
   max-width: 1000px;
