@@ -13,21 +13,13 @@ html(lang='en')
       div(class='centeredContent headerContents')
         ul(class='headerNav')
           li
-            div.showNavButton
-              img(src='/icons/hamburgerwhite.svg')
-              //- span(class="material-symbols-outlined")
-            
+            //- div.showNavButton
+            img.showNavButton(src='/icons/hamburgerwhite.svg')
+
           li
             //- TODO - Replace with a logo
             a(href='/catalog') The Virtual Gallery 
-          //- li
-          //-   a(href='/catalog/artists') All artists
-          //- li
-          //-   a(href='/catalog/pieces') All pieces
-          //- li
-          //-   a(href='/catalog/artist/create') Create new artist
-          //- li
-          //-   a(href='/catalog/piece/create') Create new piece
+
         //- TODO - Implement authorisation
         p User Login (TBA)
     div#siteMenu.hide

@@ -200,6 +200,7 @@ img {
 .headerContents {
   display: flex;
   flex-direction: row;
+  font-size: 1.25rem;
   justify-content: space-between;
   align-items: center;
   color: white;
@@ -217,9 +218,9 @@ img {
   color: white;
 }
 
-.showNavButton {
+/* .showNavButton {
  color: white;
-}
+} */
 
 .siteBody {
   margin-top: 90px;
