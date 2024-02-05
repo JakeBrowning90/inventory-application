@@ -198,11 +198,10 @@ img {
 }
 
 .headerContents {
-
   display: flex;
   flex-direction: row;
-  /* gap: 20px; */
   justify-content: space-between;
+  align-items: center;
   color: white;
 }
 
@@ -210,6 +209,7 @@ img {
   list-style: none;
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 10px;
 }
 
