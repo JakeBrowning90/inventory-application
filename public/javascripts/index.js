@@ -1,6 +1,5 @@
 const showDetailCard = () => {
     const pieceDetail = document.getElementById("pieceDetailBody");
-    console.log("Clicked!");
     pieceDetail.classList.toggle("show");
     pieceDetail.classList.toggle("hide");
 }

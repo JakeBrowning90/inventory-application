@@ -6,15 +6,10 @@ block content
         div(class='fullContent')
             //- h1(class="defaultSubheading") #{title} 
             
-
             div#pieceDetailCard
                 button.pieceDetailToggle View info
                 div#pieceDetailBody.hide
-                    div.pieceDetailControls
-                        button.pieceDetailButton Key Facts
-                        button.pieceDetailButton Description
-                        button.pieceDetailButton Options
-                    div.pieceDetailKeyFacts
+                    div#pieceDetailKeyFacts
                         p Title:  #{title} 
                         p Artist: 
                             a(href=piece.artist.url) #{piece.artist.display_name}
@@ -31,10 +26,10 @@ block content
                             // display height and width as default (ie most paintings)
                             p Dimensions: #{piece.height} x #{piece.width} cm 
                     
-                    div.pieceDetailDescription
-                        p Description: #{piece.description} 
+                    div#pieceDetailDescription.
+                        Description: #{piece.description} 
 
-                    div.pieceDetailButtons
+                    div#pieceDetailButtons
                         a(href=piece.url+'/delete') Delete piece
                         a(href=piece.url+'/update') Update piece
             
