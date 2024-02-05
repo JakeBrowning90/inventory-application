@@ -27,16 +27,6 @@ a {
   margin: 0 auto;
 }
 
-.pieceDetailControls {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-
-.pieceDetailButton {
-
-}
-
 form  {
   background-color: rgb(219, 219, 241);
   display: grid;
@@ -146,6 +136,26 @@ img {
   width: 100%;
 }
 
+#pieceDetailCard {
+  background-color: rgba(255, 255, 255, 0.545);
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+  max-height: 100%;
+  max-width: 30rem;
+  /* padding: 5px; */
+  position: absolute;
+  z-index: 2;
+}
+
+.pieceDetailControls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.pieceDetailDesc {
+  padding: 5px;
+}
+
 .pieceDetailImage {
   box-sizing: border-box;
   height: 100%;
@@ -156,14 +166,10 @@ img {
   z-index: 1;
 } 
 
-#pieceDetailCard {
-  background-color: rgba(255, 255, 255, 0.545);
-  box-sizing: border-box;
-  max-height: 100%;
-  max-width: 30rem;
-  padding: 5px;
-  position: absolute;
-  z-index: 2;
+.pieceDetailSection {
+  background-color: #e9edf584;
+  margin: 5px;
+  font-size: 1.2rem;
 }
 
 .hide {
@@ -173,14 +179,9 @@ img {
 .show {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  /* gap: 10px; */
 }
 
-.pieceDetailSection {
-  background-color: #e9edf560;
-  margin: 0 20px;
-  font-size: 1.2rem;
-}
 
 .defaultSubheading {
   max-width: 1000px;
@@ -270,6 +271,11 @@ img {
 
 textarea {
   height: 100%;
+}
+
+td {
+  border: 1px solid #4a4a4aa2;
+  padding: 5px;
 }
 
 .welcomeBox {

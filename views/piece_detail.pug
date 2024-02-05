@@ -7,7 +7,7 @@ block content
             //- h1(class="defaultSubheading") #{title} 
             
             div#pieceDetailCard
-                button.pieceDetailToggle View info
+                button.pieceDetailToggle.pieceDetailSection View info
                 div#pieceDetailBody.hide
                     
                     table.pieceDetailSection
@@ -28,12 +28,14 @@ block content
                             td Dimensions
                             td #{piece.height} x #{piece.width} cm 
 
-                    div.pieceDetailSection
+                    div.pieceDetailSection.pieceDetailDesc
                         p #{piece.description} 
 
-                    div.pieceDetailSection
-                        a(href=piece.url+'/update') Update piece
-                        a(href=piece.url+'/delete') Delete piece
-                        
+                    table.pieceDetailSection
+                        tr 
+                            td
+                                a(href=piece.url+'/update') Update piece
+                            td
+                                a(href=piece.url+'/delete') Delete piece
             
             img.pieceDetailImage(src=`/images/${piece.image}` alt="Image")
