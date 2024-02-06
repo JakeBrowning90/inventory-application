@@ -7,7 +7,7 @@ const PieceSchema = new Schema({
     medium: { type: String,  required: true, maxLength: 100 },
     artist: { type: Schema.Types.ObjectId, ref:"Artist", required: true },
     year: { type: String, maxLength: 20 },
-    description: { type: String, maxLength: 500},
+    description: { type: String, maxLength: 1000},
     height: { type: Number, min: 0 },
     width: { type: Number, min: 0 },
     // length: { type: Number, min: 0 },
