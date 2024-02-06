@@ -60,34 +60,24 @@ exports.piece_create_get = asyncHandler(async (req, res, next) => {
 });
 
 // Handle Piece create on POST
+// Removed escapes to allow other chars
 exports.piece_create_post = [
     body("title")
         .trim(),
-        // .escape(),
     body("medium")
         .trim(),
-        // .escape(),
     body("artist")
         .trim(),
-        // .escape(),
     body("year")
         .trim(),
-        // .escape(),
     body("description")
         .trim(),
-        // .escape(),
     body("height")
         .trim(),
-        // .escape(),
     body("width")
         .trim(),
-        // .escape(),
-    body("length")
-        .trim(),
-        // .escape(),
     body("image")
         .trim(),
-        // .escape(),
 
     asyncHandler(async (req, res, next) => {
         const errors = validationResult(req);
@@ -99,7 +89,6 @@ exports.piece_create_post = [
             description: req.body.description,
             height: req.body.height,
             width: req.body.width,
-            // length: req.body.length,
             image: req.file.filename,
         });
 
@@ -134,6 +123,7 @@ exports.piece_delete_get = asyncHandler(async (req, res, next) => {
 });
 
 // Handle Piece delete on POST
+// TODO: Delete image from folder on delete (update submit to match filename to pieceID?)
 exports.piece_delete_post = asyncHandler(async (req, res, next) => {
     await Piece.findByIdAndDelete(req.body.pieceid);
         res.redirect("/catalog/pieces")
@@ -167,31 +157,20 @@ exports.piece_update_get = asyncHandler(async (req, res, next) => {
 exports.piece_update_post = [
     body("title")
         .trim(),
-        // .escape(),
     body("medium")
         .trim(),
-        // .escape(),
     body("artist")
         .trim(),
-        // .escape(),
     body("year")
         .trim(),
-        // .escape(),
     body("description")
         .trim(),
-        // .escape(),
     body("height")
         .trim(),
-        // .escape(),
     body("width")
         .trim(),
-        // .escape(),
-    // body("length")
-    //     .trim(),
-        // .escape(),
     body("image")
         .trim(),
-        // .escape(),
 
     asyncHandler(async (req, res, next) => {
         const errors = validationResult(req);
@@ -203,7 +182,6 @@ exports.piece_update_post = [
             description: req.body.description,
             height: req.body.height,
             width: req.body.width,
-            // length: req.body.length,
             image: req.file.filename,
             _id: req.params.id,
         });

@@ -20,6 +20,33 @@ a {
   color: #4a4a4a;
 }
 
+strong {
+  font-weight: bold;
+}
+
+table {
+  box-sizing: border-box;
+  /* table-layout: fixed; */
+  /* width: 100%; */
+}
+
+tbody {
+  box-sizing: border-box;
+  table-layout: fixed;
+  width: 100%;
+}
+
+tr {
+  box-sizing: border-box;
+  /* width: 100%; */
+}
+
+td {
+  border: 1px solid #4a4a4aa2;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
 .controlButton {
   background-color: #2672a1;
   color: white;
@@ -153,10 +180,20 @@ img {
 }
 
 .pieceDetailBody {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   max-height: 100%;
   max-width: 30rem;
+  padding: 5px;
   /* transform: translateX(-50%); */
 }
+
+.pieceDetailBody > * {
+  box-sizing: border-box;
+  width: 100%;
+} 
 
 .pieceDetailControls {
   display: grid;
@@ -179,13 +216,15 @@ img {
 
 .pieceDetailSection {
   background-color: #e9edf584;
-  margin: 5px;
+  box-sizing: border-box;
+  /* padding-right: 5px; */
   font-size: 1.2rem;
 }
 
 .pieceDetailToggle {
   background-color: #e9edf5;
   align-self: end;
+  margin-right: 5px;
   transform: translatex(110%);
   transition: transform .2s ease-out 0.1s;
 }
@@ -295,7 +334,6 @@ img {
 
 .piecePreview {
   color: #4a4a4a;
-    /* Make BG color white in final version */
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -313,10 +351,7 @@ textarea {
   height: 100%;
 }
 
-td {
-  border: 1px solid #4a4a4aa2;
-  padding: 5px;
-}
+
 
 .welcomeBox {
   background-color: white;

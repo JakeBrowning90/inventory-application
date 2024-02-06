@@ -9,7 +9,6 @@ html(lang='en')
     script(src="/javascripts/index.js" defer)
   body
     div(class='siteHeader')
-      //- block sidebar
       div(class='centeredContent headerContents')
         ul(class='headerNav')
           li
@@ -19,7 +18,7 @@ html(lang='en')
             //- TODO - Replace with a logo
             a(href='/catalog') The Virtual Gallery 
 
-        //- TODO - Implement authorisation
+        //- TODO - Implement authentication
         p User Login (TBA)
     div.siteMenu
       ul(class='siteMenuNav')
@@ -33,4 +32,6 @@ html(lang='en')
           a(href='/catalog/piece/create') Create new piece
     div(class='siteBody')
       block content
+
+    //- TODO: Add a sticky footer with portfolio link and credit
 
