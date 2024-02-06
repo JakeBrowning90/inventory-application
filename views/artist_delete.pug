@@ -10,15 +10,10 @@ block content
                 h2 Delete the following pieces before attemping to delete this artist:
 
                 div(style='margin-left:20px;margin-top:20px') 
-                    //- dl 
-                    //-     each piece in artist_pieces
-                    //-         dt 
-                    //-             a(href=piece.url) #{piece.title} 
                     ul(class="artistUL") 
                         each piece in artist_pieces
                             li 
                                 a(href=piece.url class='artistLI') #{piece.title} 
-                                //- a(href=artist.url class='artistLI') #{artist.sorted_name} 
 
             else 
                 h2 Are you sure you want to delete this artist? 
