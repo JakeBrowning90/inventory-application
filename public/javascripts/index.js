@@ -5,9 +5,9 @@ const showDetailCard = () => {
 }
 
 const showSiteMenu = () => {
-    const siteMenu = document.getElementById("siteMenu");
-    siteMenu.classList.toggle("show");
-    siteMenu.classList.toggle("hide");
+    const siteMenu = document.querySelector(".siteMenu");
+    siteMenu.classList.toggle("siteMenuShow");
+    // siteMenu.classList.toggle("hide");
 }
 
 const menuToggle = document.querySelector(".showNavButton")

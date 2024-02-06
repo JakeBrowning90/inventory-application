@@ -172,15 +172,7 @@ img {
   font-size: 1.2rem;
 }
 
-.hide {
-  display: none;
-}
 
-.show {
-  display: flex;
-  flex-direction: column;
-  /* gap: 10px; */
-}
 
 
 .defaultSubheading {
@@ -235,8 +227,8 @@ img {
   z-index: 3;
 }
 
-#siteMenu {
-  background-color: #d5e2f0;
+.siteMenu {
+  background-color: rgba(185, 217, 250, 0.579);
   font-size: 1.5rem;
   gap: 10px;
   height: calc(100% - 90px);
@@ -244,7 +236,22 @@ img {
   padding: 20px;
   position: fixed;
   width: 25rem;
-  z-index: 3;
+  z-index: 2;
+
+  /* display: none; */
+  display: flex;
+  transform: translateY(-100%);
+  transition: transform .2s ease-out 0.1s;
+}
+
+.siteMenuShow {
+  background-color: #d5e2f0;
+  display: flex;
+  flex-direction: column;
+  /* height: calc(100% - 90px); */
+  /* gap: 10px; */
+
+  transform: translateY(0);
 }
 
 .siteMenuNav {
@@ -308,4 +315,18 @@ td {
   padding: 20px;
   box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.5);
   border-radius: 0.25rem;
+}
+
+.hide {
+  display: none;
+  height: 0px;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 90px);
+  /* gap: 10px; */
+  transform-origin: top;
+  animation: bounce .5s 1;
 }
