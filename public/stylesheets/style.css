@@ -54,37 +54,6 @@ td {
   padding: 5px;
 }
 
-.formNewArtist {
-  grid-template-rows: repeat(3, 1fr) 4fr 1fr;
-}
-
-.formNewPiece {
-  grid-template-rows: repeat(5, 1fr) 4fr 1fr 1fr;
-}
-
-.formDeletion {
-  grid-template-rows: 1fr;
-  gap: 0px;
-  margin-top: 10px;
-}
-
-.formSection {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-input, textarea {
-  width: 100%;
-  box-sizing: border-box;
-  resize: none;
-}
-
-.wholeRow {
-  grid-column: 1 / -1;
-}
-
-
 .artistDetailField {
   margin-bottom: 10px;
 }
@@ -116,13 +85,39 @@ input, textarea {
   /* replace with lower-res version */
   background-image: url(../backgrounds/kienValley.jpg);
   background-size: cover;
-
 }
 
 .centeredContent {
   width: 100%;
   max-width: 1000px;
   margin: 0 40px 0 40px;
+}
+
+.defaultSubheading {
+  max-width: 1000px;
+  margin: auto auto 10px auto;
+  padding: 10px 0 10px 0 ; 
+  border-bottom: #4a4a4a 1px solid;
+}
+
+.formNewArtist {
+  grid-template-rows: repeat(3, 1fr) 4fr 1fr;
+}
+
+.formNewPiece {
+  grid-template-rows: repeat(5, 1fr) 4fr 1fr 1fr;
+}
+
+.formDeletion {
+  grid-template-rows: 1fr;
+  gap: 0px;
+  margin-top: 10px;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .fullContent {
@@ -132,6 +127,71 @@ input, textarea {
   flex-direction: row;
   height: 100%;
   width: 100%;
+}
+
+.headerContents {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.25rem;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.headerNav {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.headerNav * {
+  color: white;
+}
+
+.imgThumbnail {
+  object-fit: cover;
+  height: 300px;
+  aspect-ratio: 1;
+}
+
+
+input, textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: none;
+}
+
+.options {
+  border-top:  #4a4a4a 1px solid;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 5px;
+}
+
+.pieceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  overflow: auto;
+  padding-bottom: 40px;
+}
+
+.piecePreview {
+  color: #4a4a4a;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 330px;
+  gap: 10px;
+}
+
+.piecePreview > * {
+  color: #4a4a4a;
+  margin-bottom: 5px;
 }
 
 .pieceDetailCard {
@@ -199,40 +259,6 @@ input, textarea {
   transform: translatex(0);
 }
 
-.defaultSubheading {
-  max-width: 1000px;
-  margin: auto auto 10px auto;
-  padding: 10px 0 10px 0 ; 
-  border-bottom: #4a4a4a 1px solid;
-}
-
-.imgThumbnail {
-  object-fit: cover;
-  height: 300px;
-  aspect-ratio: 1;
-}
-
-.headerContents {
-  display: flex;
-  flex-direction: row;
-  font-size: 1.25rem;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-}
-
-.headerNav {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-}
-
-.headerNav * {
-  color: white;
-}
-
 .siteBody {
   margin-top: 90px;
   height: 100%;
@@ -279,37 +305,6 @@ input, textarea {
   padding-left: 20px;
 }
 
-.options {
-  border-top:  #4a4a4a 1px solid;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding-top: 5px;
-}
-
-.pieceGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  overflow: auto;
-  padding-bottom: 40px;
-}
-
-.piecePreview {
-  color: #4a4a4a;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 330px;
-  gap: 10px;
-}
-
-.piecePreview > * {
-  color: #4a4a4a;
-  margin-bottom: 5px;
-}
-
 .welcomeBox {
   background-color: white;
   display: flex;
@@ -320,5 +315,9 @@ input, textarea {
   padding: 20px;
   box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.5);
   border-radius: 0.25rem;
+}
+
+.wholeRow {
+  grid-column: 1 / -1;
 }
 

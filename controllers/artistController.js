@@ -44,8 +44,9 @@ exports.artist_create_get = asyncHandler(async (req, res, next) => {
 // Removed escapes to allow other chars
 exports.artist_create_post = [
     body("first_name")
-        .trim()
-        .isLength({ min: 1 }),
+        .optional({ values: "falsy" })
+        .trim(),
+        // .isLength({ min: 1 }),
     body("family_name")
         .trim(),
     body("year_of_birth")
@@ -142,8 +143,8 @@ exports.artist_update_get = asyncHandler(async (req, res, next) => {
 exports.artist_update_post = [
     body("first_name")
     .optional({ values: "falsy" })
-    .trim()
-    .isLength({ min: 1 }),
+    .trim(),
+    // .isLength({ min: 1 }),
     body("family_name")
     .trim(),
     body("year_of_birth")
