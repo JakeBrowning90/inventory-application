@@ -22,15 +22,15 @@ a {
 
 form  {
   background-color: rgb(219, 219, 241);
+  border-radius: 0.25rem;
+  box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.5);
   display: grid;
+  gap: 10px;
   grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto 0 auto;
   max-width: 1000px;
   max-height: 100%;
-  gap: 10px;
-  margin: 0 auto 0 auto;
   padding: 20px;
-  box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.5);
-  border-radius: 0.25rem;
 }
 
 h1 {
@@ -60,12 +60,12 @@ td {
 }
 
 .artistUL {
-  max-width: 1000px;
-  margin: auto;
-  display: flex;
+   display: flex;
   flex-direction: column;
   gap: 10px;
   list-style: inside disc;
+  margin: auto;
+  max-width: 1000px;
 }
 
 .artistLI {
@@ -80,26 +80,27 @@ td {
 }
 
 .backgroundWelcome {
-  display: flex;
-  justify-content: center;
-  height: calc(100% - 40px);
-  padding-top: 40px;
-  /* replace with lower-res version */
+    /* replace with lower-res version */
   background-image: url(../backgrounds/kienValley.jpg);
   background-size: cover;
+  display: flex;
+  height: calc(100% - 40px);
+  justify-content: center;
+  padding-top: 40px;
 }
 
 .centeredContent {
-  width: 100%;
-  max-width: 1000px;
   margin: 0 40px 0 40px;
+  max-width: 1000px;
+  width: 100%;
 }
 
 .defaultSubheading {
-  max-width: 1000px;
-  margin: auto auto 10px auto;
-  padding: 10px 0 10px 0 ; 
   border-bottom: #4a4a4a 1px solid;
+  margin: auto auto 10px auto;
+  max-width: 1000px;
+  padding: 10px 0 10px 0 ; 
+
 }
 
 .formNewArtist {
@@ -111,8 +112,8 @@ td {
 }
 
 .formDeletion {
-  grid-template-rows: 1fr;
   gap: 0px;
+  grid-template-rows: 1fr;
   margin-top: 10px;
 }
 
@@ -132,20 +133,20 @@ td {
 }
 
 .headerContents {
+  align-items: center;
+  color: white;
   display: flex;
   flex-direction: row;
   font-size: 1.25rem;
   justify-content: space-between;
-  align-items: center;
-  color: white;
 }
 
 .headerNav {
-  list-style: none;
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
   gap: 10px;
+  list-style: none;
 }
 
 .headerNav * {
@@ -153,16 +154,15 @@ td {
 }
 
 .imgThumbnail {
-  object-fit: cover;
-  height: 300px;
   aspect-ratio: 1;
+  height: 300px;
+  object-fit: cover;
 }
 
-
 input, textarea {
-  width: 100%;
   box-sizing: border-box;
   resize: none;
+  width: 100%;
 }
 
 .options {
@@ -175,20 +175,20 @@ input, textarea {
 
 .pieceGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   overflow: auto;
   padding-bottom: 40px;
 }
 
 .piecePreview {
-  color: #4a4a4a;
   background-color: white;
+  color: #4a4a4a;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 330px;
   gap: 10px;
+  max-width: 330px;
+  width: 100%;
 }
 
 .piecePreview > * {
@@ -237,9 +237,9 @@ input, textarea {
 .pieceDetailImage {
   box-sizing: border-box;
   height: 100%;
-  width: auto;
-  padding: 30px 10px 10px 10px;
   margin: auto;
+  padding: 30px 10px 10px 10px;
+  width: auto;
   z-index: 1;
 } 
 
@@ -250,8 +250,8 @@ input, textarea {
 }
 
 .pieceDetailToggle {
-  background-color: #e9edf5;
   align-self: end;
+  background-color: #e9edf5;
   margin-right: 5px;
   transform: translatex(110%);
   transition: transform .2s ease-out 0.1s;
@@ -262,24 +262,26 @@ input, textarea {
 }
 
 .siteBody {
-  margin-top: 90px;
   height: 100%;
+  margin-top: 90px;
 }
 
 .siteHeader {
-  background-color: #393c41;
-  position: fixed;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  height: 90px;
-  width: 100%;
+  background-color: #393c41;
   box-shadow: 0 0 4px 0 rgba(0,0,0,0.5);
+  display: flex;
+  height: 90px;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
   z-index: 4;
 }
 
 .siteMenu {
   background-color: #d5e2f0;
+  display: flex;
+  flex-direction: column;
   font-size: 1.5rem;
   gap: 10px;
   height: calc(100% - 90px);
@@ -290,8 +292,6 @@ input, textarea {
   width: 25rem;
   z-index: 3;
 
-  display: flex;
-  flex-direction: column;
   transform: translateY(-100%);
   transition: transform .2s ease-out 0.1s;
 }
@@ -309,14 +309,14 @@ input, textarea {
 
 .welcomeBox {
   background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.5);
   display: flex;
   flex-direction: column;
   gap: 10px;
   max-width: 25rem;
   margin-left: auto;
   padding: 20px;
-  box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.5);
-  border-radius: 0.25rem;
 }
 
 .wholeRow {
