@@ -10,7 +10,7 @@ const ArtistSchema = new Schema({
     bio: { type: String, maxLength: 1000},
 });
 
-// Show the given name first for the detil page
+// Show the given name first for the detail page
 ArtistSchema.virtual("display_name").get(function () {
     let fullname = "";
 
