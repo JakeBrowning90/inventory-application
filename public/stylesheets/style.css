@@ -134,11 +134,14 @@ td {
 
 .headerContents {
   align-items: center;
-  color: white;
   display: flex;
   flex-direction: row;
   font-size: 1.25rem;
   justify-content: space-between;
+}
+
+.headerContents > * {
+  color: white;
 }
 
 .headerNav {

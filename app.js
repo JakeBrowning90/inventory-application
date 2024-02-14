@@ -57,6 +57,12 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/catalog', catalogRouter);
 
+app.get('/log-in', function(req, res, next) {
+  res.render("user_log_in", {
+    title:"User Login"
+  })
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
