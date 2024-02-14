@@ -37,6 +37,7 @@ async function main() {
   await mongoose.connect(mongoDB);
 }
 
+// TODO : Move to separate module
 const Schema = mongoose.Schema;
 
 const User = mongoose.model(
@@ -120,6 +121,15 @@ app.post(
     failureRedirect:"/log-in"
   }) 
 );
+
+app.get("/log-out", (req, res, next) => {
+  req.logout((err) => {
+    if (err) {
+      return next(err);
+    }
+    res.redirect("/");
+  });
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

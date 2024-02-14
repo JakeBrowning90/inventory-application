@@ -11,7 +11,8 @@ exports.artist_list = asyncHandler(async (req, res, next) => {
 
     res.render("artist_list", {
         title: "Browse by Artist",
-        artist_list: allArtists
+        artist_list: allArtists,
+        user: req.user,
     });
 });
 
@@ -32,12 +33,20 @@ exports.artist_detail = asyncHandler(async (req, res, next) => {
         title: artist.display_name,
         artist: artist,
         artist_pieces: allPiecesByArtist,
+        user: req.user,
     });
 });
 
 // Display Artist create form on GET
 exports.artist_create_get = asyncHandler(async (req, res, next) => {
-    res.render("artist_form", { title: "Create Artist" });
+    if (!req.user) {
+        res.redirect("/log-in");
+    } else {
+        res.render("artist_form", { 
+            title: "Create Artist", 
+            user: req.user,
+        });
+    }
 });
 
 // Handle Artist create on POST
@@ -74,6 +83,7 @@ exports.artist_create_post = [
                 title: "Create Artist",
                 artist: artist,
                 errors: errors.array(),
+                user: req.user,
             });
             return;
         } else {
@@ -98,6 +108,7 @@ exports.artist_delete_get = asyncHandler(async (req, res, next) => {
         title: "Delete Artist",
         artist: artist,
         artist_pieces: allPiecesByArtist,
+        user: req.user,
     });
 });
 
@@ -136,6 +147,7 @@ exports.artist_update_get = asyncHandler(async (req, res, next) => {
     res.render("artist_form", {
         title: "Update Artist",
         artist: artist,
+        user: req.user,
     });
 });
 
@@ -173,6 +185,7 @@ exports.artist_update_post = [
                 title: "Update Artist",
                 artist: artist,
                 errors: errors.array(),
+                user: req.user,
             });
             return;
         } else {

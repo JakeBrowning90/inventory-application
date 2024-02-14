@@ -4,7 +4,10 @@ block content
   div(class="backgroundWelcome")
     div(class="centeredContent")
       div(class="welcomeBox")
-        h1 Welcome
+        if user 
+          h1 Welcome back !{user.username}
+        else  
+          h1 Welcome 
         p Browse famous works of art and learn about the creative minds behind them!
 
         h2 Current entries: 

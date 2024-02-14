@@ -16,6 +16,7 @@ exports.index = asyncHandler(async (req, res, next) => {
         // title: "Art Gallery",
         artist_count: numArtists,
         piece_count: numPieces,
+        user: req.user,
     });
 });
 
@@ -28,7 +29,9 @@ exports.piece_list = asyncHandler(async (req, res, next) => {
 
     res.render("piece_list", { 
         title: "Browse by Piece", 
-        piece_list: allPieces });
+        piece_list: allPieces,
+        user: req.user, 
+    });
 });
 
 // Display details of specific Piece
@@ -43,7 +46,8 @@ exports.piece_detail = asyncHandler(async (req, res, next) => {
 
     res.render("piece_detail", {
         title: piece.title,
-        piece: piece
+        piece: piece,
+        user: req.user,
     });
 });
 
@@ -55,7 +59,8 @@ exports.piece_create_get = asyncHandler(async (req, res, next) => {
         
     res.render("piece_form", {
         title: "Create Piece",
-        artists: allArtists
+        artists: allArtists,
+        user: req.user,
     });
 });
 
@@ -99,6 +104,7 @@ exports.piece_create_post = [
                 title: "Create Piece",
                 piece: piece,
                 errors: errors.array(),
+                user: req.user,
             });
             return;
         } else {
@@ -119,6 +125,7 @@ exports.piece_delete_get = asyncHandler(async (req, res, next) => {
     res.render("piece_delete", {
         title: "Delete Piece",
         piece: piece,
+        user: req.user,
     });
 });
 
@@ -149,7 +156,8 @@ exports.piece_update_get = asyncHandler(async (req, res, next) => {
     res.render("piece_form", {
         title: "Update Piece",
         piece: piece,
-        artists: allArtists
+        artists: allArtists,
+        user: req.user,
     });
 });
 
@@ -193,6 +201,7 @@ exports.piece_update_post = [
                 title: "Update Piece",
                 piece: piece,
                 errors: errors.array(),
+                user: req.user,
             });
             return;
         } else {
