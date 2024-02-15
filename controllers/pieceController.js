@@ -56,12 +56,16 @@ exports.piece_create_get = asyncHandler(async (req, res, next) => {
     const allArtists = await Artist.find({}, "first_name family_name")
         .sort({ family_name: 1 })
         .exec();
-        
-    res.render("piece_form", {
-        title: "Create Piece",
-        artists: allArtists,
-        user: req.user,
-    });
+    
+    if (!req.user) {
+        res.redirect("/log-in")
+    } else {
+        res.render("piece_form", {
+            title: "Create Piece",
+            artists: allArtists,
+            user: req.user,
+        });
+    }
 });
 
 // Handle Piece create on POST
@@ -122,11 +126,15 @@ exports.piece_delete_get = asyncHandler(async (req, res, next) => {
         res.redirect("/catalog/pieces");
     }
 
-    res.render("piece_delete", {
-        title: "Delete Piece",
-        piece: piece,
-        user: req.user,
-    });
+    if (!req.user) {
+        res.redirect("/log-in")
+    } else {
+        res.render("piece_delete", {
+            title: "Delete Piece",
+            piece: piece,
+            user: req.user,
+        });
+    }
 });
 
 // Handle Piece delete on POST
@@ -153,12 +161,16 @@ exports.piece_update_get = asyncHandler(async (req, res, next) => {
         return next(err);
     }
 
-    res.render("piece_form", {
-        title: "Update Piece",
-        piece: piece,
-        artists: allArtists,
-        user: req.user,
-    });
+    if (!req.user) {
+        res.redirect("/log-in")
+    } else {
+        res.render("piece_form", {
+            title: "Update Piece",
+            piece: piece,
+            artists: allArtists,
+            user: req.user,
+        });
+    }
 });
 
 // Handle Piece update on POST

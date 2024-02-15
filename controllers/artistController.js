@@ -103,13 +103,16 @@ exports.artist_delete_get = asyncHandler(async (req, res, next) => {
     if (artist === null) {
         res.redirect("/catalog/artists");
     }
-
-    res.render("artist_delete", {
-        title: "Delete Artist",
-        artist: artist,
-        artist_pieces: allPiecesByArtist,
-        user: req.user,
-    });
+    if (!req.user) {
+        res.redirect("/log-in");
+    } else {
+        res.render("artist_delete", {
+            title: "Delete Artist",
+            artist: artist,
+            artist_pieces: allPiecesByArtist,
+            user: req.user,
+        });
+    }
 });
 
 // Handle Artist delete on POST
@@ -144,11 +147,15 @@ exports.artist_update_get = asyncHandler(async (req, res, next) => {
         return next(err);
     }
 
-    res.render("artist_form", {
-        title: "Update Artist",
-        artist: artist,
-        user: req.user,
-    });
+    if (!req.user) {
+        res.redirect("/log-in");
+    } else {
+        res.render("artist_form", {
+            title: "Update Artist",
+            artist: artist,
+            user: req.user,
+        });
+    }
 });
 
 // Handle Artist update on POST
