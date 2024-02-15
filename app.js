@@ -9,6 +9,7 @@ const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
+require('dotenv').config();
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const catalogRouter = require('./routes/catalog');
@@ -30,7 +31,7 @@ const upload = multer({ storage: storage });
 // Set up mongoose connection
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-const mongoDB = "mongodb+srv://JakeBrowning90:MyCluster02023Jake@cluster0.wzkqxnd.mongodb.net/inventory_application?retryWrites=true&w=majority";
+const mongoDB = process.env.SECRET_KEY;
 
 main().catch((err) => console.log(err));
 async function main() {
@@ -43,8 +44,8 @@ const Schema = mongoose.Schema;
 const User = mongoose.model(
   "User",
   new Schema({
-    username: { type: String, required: true },
-    password: { type: String, required: true }
+    username: { type: String, required: true, maxLength: 20 },
+    password: { type: String, required: true, maxLength: 20 }
   })
 );
 
