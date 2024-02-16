@@ -8,7 +8,8 @@ block content
                 ul(class="pieceGrid")
                     each piece in piece_list 
                         li(class="piecePreview") 
-                            img(src=`/images/${piece.image}` alt=`${piece.image}` class="imgThumbnail")
+                            a(href=piece.url)
+                                img(src=`/images/${piece.image}` alt=`${piece.image}` class="imgThumbnail")
                             a(href=piece.url) #{piece.title} 
                             p #{piece.artist.display_name} 
 
